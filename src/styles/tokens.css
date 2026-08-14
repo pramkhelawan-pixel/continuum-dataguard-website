@@ -1,0 +1,108 @@
+/**
+ * Continuum Dataguard Technologies — Design Tokens
+ *
+ * Two-layer visual grammar:
+ *   REALITY LAYER      → photography/video, rendered in full, true color
+ *   INTELLIGENCE LAYER → system graphics, rendered exclusively in the
+ *                         signal/verify accent colors on neutral/mono
+ *
+ * Tokens under @theme are picked up by Tailwind v4 and become utilities
+ * automatically (e.g. --color-signal → bg-signal, text-signal, border-signal).
+ * Motion/grid tokens live in :root since they aren't Tailwind utility
+ * namespaces — they're consumed directly in component CSS and animation code.
+ */
+
+@theme {
+  /* ---------------------------------------------------------------------
+   * Color — base neutrals (dark-first; this is a fixed brand identity,
+   * not an OS-theme-responsive light/dark system)
+   * ------------------------------------------------------------------- */
+  --color-void: #08090b;              /* page background */
+  --color-ink: #101216;               /* base surface */
+  --color-surface: #16191e;           /* card / panel surface */
+  --color-surface-raised: #1d2127;    /* hovered / elevated surface */
+  --color-border: #262b32;            /* hairline grid lines, dividers */
+  --color-border-strong: #3a414b;     /* emphasis borders */
+
+  --color-paper: #f4f5f7;             /* primary text on dark */
+  --color-mist: #aeb4bd;              /* secondary text on dark */
+  --color-fog: #767d87;               /* tertiary / muted / disabled text */
+
+  /* Intelligence layer accent — telemetry cyan. Reserved for system
+   * graphics, data, interactive/system UI. Never used on real photography
+   * as a color grade, only as an overlay element. */
+  --color-signal: #3ad6f0;
+  --color-signal-strong: #85e9fa;
+  --color-signal-dim: #1b6e80;
+
+  /* Secondary accent — reserved strictly for the VERIFY stage and
+   * verification/status states. Not decorative. */
+  --color-verify: #f0a93a;
+
+  /* Functional-only states (form validation) */
+  --color-danger: #f2543d;
+  --color-success: #3adb7a;
+
+  /* ---------------------------------------------------------------------
+   * Typography
+   * ------------------------------------------------------------------- */
+  --font-display: "Space Grotesk Variable", "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Inter Variable", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", monospace;
+
+  /* Fixed sizes for UI/body text */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+
+  /* Fluid sizes for editorial/display text */
+  --text-2xl: clamp(1.5rem, 1.4rem + 0.5vw, 1.75rem);
+  --text-3xl: clamp(1.875rem, 1.7rem + 0.9vw, 2.25rem);
+  --text-4xl: clamp(2.25rem, 1.9rem + 1.75vw, 3rem);
+  --text-5xl: clamp(2.75rem, 2.2rem + 2.75vw, 3.75rem);
+  --text-6xl: clamp(3.25rem, 2.4rem + 4.25vw, 4.75rem);
+  --text-7xl: clamp(3.75rem, 2.5rem + 6vw, 6rem);
+
+  /* ---------------------------------------------------------------------
+   * Radius — sharp/minimal, engineering precision over softness
+   * ------------------------------------------------------------------- */
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 10px;
+}
+
+:root {
+  /* -----------------------------------------------------------------
+   * Motion — GSAP + CSS both read these for a single source of truth
+   * --------------------------------------------------------------- */
+  --ease-system: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-system-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+
+  --duration-instant: 100ms;
+  --duration-fast: 200ms;
+  --duration-base: 400ms;
+  --duration-slow: 700ms;
+  --duration-cinematic: 1200ms;
+
+  /* -----------------------------------------------------------------
+   * Structural grid — the "instrumented page" hairline grid/annotation
+   * system used across the Intelligence Layer
+   * --------------------------------------------------------------- */
+  --grid-unit: 8px;
+  --grid-line-width: 1px;
+}
+
+/* Reduced motion: collapse durations so anything still using transitions
+ * resolves instantly rather than partially animating. */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duration-instant: 0ms;
+    --duration-fast: 0ms;
+    --duration-base: 0ms;
+    --duration-slow: 0ms;
+    --duration-cinematic: 0ms;
+  }
+}

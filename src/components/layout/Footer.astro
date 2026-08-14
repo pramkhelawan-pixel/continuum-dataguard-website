@@ -1,0 +1,63 @@
+---
+import Container from '../ui/Container.astro';
+
+const currentYear = new Date().getFullYear();
+
+const siteMap = [
+  { label: 'Company', href: '/company' },
+  { label: 'Capabilities', href: '/capabilities' },
+  { label: 'Neptune', href: '/neptune' },
+  { label: 'Contact', href: '/contact' },
+];
+
+const legal = [
+  { label: 'Privacy Policy', href: '/privacy' },
+  { label: 'Terms of Use', href: '/terms' },
+];
+---
+
+<footer class="border-t border-border bg-void">
+  <Container class="grid gap-12 py-16 md:grid-cols-3">
+    <div>
+      <p class="font-mono text-sm uppercase tracking-widest text-paper">
+        Continuum Dataguard Technologies
+      </p>
+    </div>
+
+    <nav aria-label="Sitemap">
+      <ul class="flex flex-col gap-3">
+        {siteMap.map((item) => (
+          <li>
+            <a
+              href={item.href}
+              class="font-mono text-xs uppercase tracking-wider text-mist hover:text-signal"
+            >
+              {item.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+
+    <nav aria-label="Legal">
+      <ul class="flex flex-col gap-3">
+        {legal.map((item) => (
+          <li>
+            <a
+              href={item.href}
+              class="font-mono text-xs uppercase tracking-wider text-mist hover:text-signal"
+            >
+              {item.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  </Container>
+
+  <Container class="border-t border-border py-6">
+    <p class="font-mono text-xs text-fog">
+      &copy; {currentYear} Continuum Dataguard Technologies. All rights reserved.
+    </p>
+  </Container>
+</footer>

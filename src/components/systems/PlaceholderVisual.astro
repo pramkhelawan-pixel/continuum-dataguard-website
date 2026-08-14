@@ -1,0 +1,41 @@
+---
+interface Props {
+  label?: string;
+  aspect?: string;
+  class?: string;
+}
+
+const {
+  label = 'Reality Layer — Photography Placeholder',
+  aspect = 'aspect-video',
+  class: className,
+} = Astro.props;
+---
+
+<div
+  class:list={[
+    'relative flex items-center justify-center overflow-hidden border border-border-strong bg-surface',
+    aspect,
+    className,
+  ]}
+>
+  <div class="placeholder-hatch" aria-hidden="true"></div>
+  <p class="relative z-10 px-4 text-center font-mono text-xs uppercase tracking-wider text-fog">
+    {label}
+  </p>
+</div>
+
+<style>
+  .placeholder-hatch {
+    position: absolute;
+    inset: 0;
+    background-image: repeating-linear-gradient(
+      45deg,
+      var(--color-border) 0,
+      var(--color-border) 1px,
+      transparent 1px,
+      transparent calc(var(--grid-unit) * 1.5)
+    );
+    opacity: 0.5;
+  }
+</style>

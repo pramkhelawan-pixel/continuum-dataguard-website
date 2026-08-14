@@ -1,0 +1,111 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/layout/Header.astro';
+import Footer from '../components/layout/Footer.astro';
+import Container from '../components/ui/Container.astro';
+import Section from '../components/ui/Section.astro';
+import Button from '../components/ui/Button.astro';
+import Badge from '../components/ui/Badge.astro';
+import SystemLoop from '../components/systems/SystemLoop.astro';
+import NodeGraph from '../components/systems/NodeGraph.astro';
+import GridOverlay from '../components/systems/GridOverlay.astro';
+import PlaceholderVisual from '../components/systems/PlaceholderVisual.astro';
+
+const capabilities = [
+  'IT Asset Recovery',
+  'Secure Data Destruction',
+  'Device Engineering',
+  'Digital Technology',
+  'Operational Technology',
+];
+---
+
+<Layout
+  title="Home"
+  description="Continuum Dataguard Technologies — a systems-driven technology and engineering organisation."
+>
+  <Header slot="header" />
+
+  <Section class="relative overflow-hidden border-b border-border">
+    <GridOverlay />
+    <Container class="relative grid items-center gap-12 lg:grid-cols-2">
+      <div>
+        <Badge>Continuum Dataguard Technologies</Badge>
+        <h1 class="mt-6 text-6xl text-paper">
+          A systems-driven technology and engineering organisation.
+        </h1>
+        <p class="mt-6 max-w-prose text-mist">Content for this section is pending final copy approval.</p>
+        <div class="mt-8 flex flex-wrap gap-4">
+          <Button href="/capabilities">View Capabilities</Button>
+          <Button href="/contact" variant="secondary">Contact</Button>
+        </div>
+      </div>
+      <PlaceholderVisual label="Reality Layer — Photography Placeholder" aspect="aspect-square" />
+    </Container>
+  </Section>
+
+  <Section id="systems-loop" class="border-b border-border">
+    <Container class="grid items-center gap-12 lg:grid-cols-2">
+      <div>
+        <Badge>The Continuum Loop</Badge>
+        <h2 class="mt-6 text-4xl text-paper">
+          Observe. Diagnose. Engineer. Secure. Verify. Improve.
+        </h2>
+        <p class="mt-6 max-w-prose text-mist">Content for this section is pending final copy approval.</p>
+      </div>
+      <SystemLoop />
+    </Container>
+  </Section>
+
+  <Section id="capabilities" class="border-b border-border">
+    <Container>
+      <Badge>Capabilities</Badge>
+      <h2 class="mt-6 text-4xl text-paper">Where Continuum operates.</h2>
+      <ul class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {capabilities.map((capability) => (
+          <li class="border border-border-strong p-6">
+            <p class="font-mono text-sm uppercase tracking-wider text-paper">{capability}</p>
+            <p class="mt-3 text-sm text-fog">Content pending.</p>
+          </li>
+        ))}
+      </ul>
+    </Container>
+  </Section>
+
+  <Section id="neptune" class="border-b border-border">
+    <Container class="grid items-center gap-12 lg:grid-cols-2">
+      <PlaceholderVisual label="Reality Layer — Photography Placeholder" aspect="aspect-video" />
+      <div>
+        <Badge>A Continuum Dataguard Technologies Product</Badge>
+        <h2 class="mt-6 text-4xl text-paper">Neptune</h2>
+        <p class="mt-6 max-w-prose text-mist">Content for this section is pending final copy approval.</p>
+        <div class="mt-8">
+          <Button href="/neptune" variant="secondary">About Neptune</Button>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <Section id="system" class="border-b border-border">
+    <Container>
+      <Badge>Systems Thinking</Badge>
+      <h2 class="mt-6 max-w-prose text-4xl text-paper">
+        People, data, technology, and process — as one interconnected system.
+      </h2>
+    </Container>
+    <div class="mx-auto mt-12 max-w-2xl px-4 opacity-70">
+      <NodeGraph />
+    </div>
+  </Section>
+
+  <Section id="contact-cta">
+    <Container class="text-center">
+      <h2 class="text-4xl text-paper">Start a conversation.</h2>
+      <div class="mt-8 flex justify-center">
+        <Button href="/contact">Contact Continuum</Button>
+      </div>
+    </Container>
+  </Section>
+
+  <Footer slot="footer" />
+</Layout>

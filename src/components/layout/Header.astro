@@ -1,0 +1,71 @@
+---
+import Container from '../ui/Container.astro';
+
+const navItems = [
+  { label: 'Company', href: '/company' },
+  { label: 'Capabilities', href: '/capabilities' },
+  { label: 'Neptune', href: '/neptune' },
+  { label: 'Contact', href: '/contact' },
+];
+---
+
+<header class="sticky top-0 z-50 border-b border-border bg-void/80 backdrop-blur">
+  <Container as="nav" class="flex items-center justify-between py-4">
+    <a href="/" class="font-mono text-sm uppercase tracking-widest text-paper">
+      Continuum Dataguard
+    </a>
+
+    <ul class="hidden items-center gap-8 md:flex">
+      {navItems.map((item) => (
+        <li>
+          <a
+            href={item.href}
+            class="font-mono text-xs uppercase tracking-wider text-mist hover:text-signal"
+          >
+            {item.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+
+    <button
+      id="nav-toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="mobile-nav"
+      class="font-mono text-xs uppercase tracking-wider text-paper md:hidden"
+    >
+      <span id="nav-toggle-label">Menu</span>
+    </button>
+  </Container>
+
+  <ul
+    id="mobile-nav"
+    class="hidden flex-col gap-6 border-t border-border bg-void px-6 py-8 md:hidden"
+  >
+    {navItems.map((item) => (
+      <li>
+        <a
+          href={item.href}
+          class="font-mono text-sm uppercase tracking-wider text-mist hover:text-signal"
+        >
+          {item.label}
+        </a>
+      </li>
+    ))}
+  </ul>
+</header>
+
+<script>
+  const toggle = document.getElementById('nav-toggle');
+  const label = document.getElementById('nav-toggle-label');
+  const menu = document.getElementById('mobile-nav');
+
+  toggle?.addEventListener('click', () => {
+    const expanded = toggle.getAttribute('aria-expanded') === 'true';
+    toggle.setAttribute('aria-expanded', String(!expanded));
+    menu?.classList.toggle('hidden');
+    menu?.classList.toggle('flex');
+    if (label) label.textContent = expanded ? 'Menu' : 'Close';
+  });
+</script>

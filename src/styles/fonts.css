@@ -1,0 +1,11 @@
+/**
+ * Self-hosted fonts (no third-party font CDN requests).
+ * Space Grotesk / Inter are loaded as variable fonts (full weight range in
+ * one file). IBM Plex Mono is loaded at two static weights only — it is
+ * used exclusively for system/telemetry labels, not body copy, so the
+ * full family isn't needed.
+ */
+@import "@fontsource-variable/space-grotesk";
+@import "@fontsource-variable/inter";
+@import "@fontsource/ibm-plex-mono/latin-400.css";
+@import "@fontsource/ibm-plex-mono/latin-500.css";
