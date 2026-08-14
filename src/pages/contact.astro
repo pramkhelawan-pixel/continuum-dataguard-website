@@ -96,18 +96,20 @@ import Button from '../components/ui/Button.astro';
   const form = document.getElementById('contact-form');
   const status = document.getElementById('form-status');
 
-  const fieldIds = ['name', 'email', 'message'];
+  const fieldIds = ['name', 'email', 'message'] as const;
+  type FieldId = (typeof fieldIds)[number];
 
-  const validators = {
+  const validators: Record<FieldId, (value: string) => boolean> = {
     name: (value) => value.trim().length > 0,
     email: (value) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim()),
     message: (value) => value.trim().length >= 10,
   };
 
-  function validateField(id) {
+  function validateField(id: FieldId): boolean {
     const el = document.getElementById(id);
     const errorEl = document.getElementById(id + '-error');
     if (!el || !errorEl) return true;
+    if (!(el instanceof HTMLInputElement) && !(el instanceof HTMLTextAreaElement)) return true;
 
     const valid = validators[id](el.value);
     el.setAttribute('aria-invalid', String(!valid));
