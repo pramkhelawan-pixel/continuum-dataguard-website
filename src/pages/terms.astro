@@ -1,0 +1,116 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/layout/Header.astro';
+import Footer from '../components/layout/Footer.astro';
+import Container from '../components/ui/Container.astro';
+import Section from '../components/ui/Section.astro';
+import Badge from '../components/ui/Badge.astro';
+---
+
+<Layout title="Terms of Use" description="Terms governing use of the Continuum Dataguard Technologies website.">
+  <Header slot="header" />
+
+  <Section>
+    <Container class="max-w-3xl">
+      <Badge>Terms of Use</Badge>
+      <h1 class="mt-6 text-4xl text-paper">Terms of Use</h1>
+      <p class="mt-6 text-mist">
+        These Terms of Use govern your use of the Continuum Dataguard Technologies website. By
+        using this website, you agree to these terms.
+      </p>
+
+      <div class="mt-12 flex flex-col gap-10">
+        <div>
+          <h2 class="text-2xl text-paper">Website use</h2>
+          <p class="mt-3 text-mist">
+            This website is provided for general informational purposes about Continuum Dataguard
+            Technologies, its consulting practice and its Neptune product. You may use this
+            website for lawful purposes only.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-2xl text-paper">Intellectual property</h2>
+          <p class="mt-3 text-mist">
+            Unless otherwise indicated, the content, design and branding of this website are the
+            property of Continuum Dataguard Technologies. You may not reproduce, distribute or
+            otherwise use this content without prior permission.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-2xl text-paper">Website information</h2>
+          <p class="mt-3 text-mist">
+            Content on this website is provided for general information purposes and does not
+            constitute professional, legal or financial advice. While we take reasonable care to
+            keep information accurate and up to date, we do not guarantee its completeness or
+            accuracy.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-2xl text-paper">External links</h2>
+          <p class="mt-3 text-mist">
+            If this website contains links to third-party websites, those links are provided for
+            convenience only. Continuum Dataguard Technologies does not control and is not
+            responsible for the content or practices of any third-party website.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-2xl text-paper">Limitation of liability</h2>
+          <p class="mt-3 text-mist">
+            To the maximum extent permitted by law, Continuum Dataguard Technologies shall not be
+            liable for any loss or damage arising from your use of, or inability to use, this
+            website.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-2xl text-paper">Availability of the website</h2>
+          <p class="mt-3 text-mist">
+            We do not guarantee that this website will be available at all times or free from
+            interruption. The website may be modified, suspended or discontinued, in whole or in
+            part, at any time.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-2xl text-paper">Changes to website content</h2>
+          <p class="mt-3 text-mist">
+            We may update or change the content of this website, including these Terms of Use, at
+            any time without prior notice.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-2xl text-paper">Governing law</h2>
+          <p class="mt-3 text-mist">
+            These Terms of Use are governed by the laws of the Republic of South Africa. Any
+            disputes arising from your use of this website will be subject to the jurisdiction of
+            the South African courts.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-2xl text-paper">Contact</h2>
+          <p class="mt-3 text-mist">
+            Questions regarding these Terms of Use can be directed to:
+          </p>
+          <div class="mt-4 flex flex-col gap-2">
+            <p class="font-mono text-sm text-paper">Continuum Dataguard Technologies</p>
+            <p class="font-mono text-sm text-mist">Durban, KwaZulu-Natal, South Africa</p>
+            <a href="mailto:continuumdataguardtech@outlook.com" class="font-mono text-sm text-paper hover:text-signal">
+              continuumdataguardtech@outlook.com
+            </a>
+            <a href="https://wa.me/27611519561" class="font-mono text-sm text-paper hover:text-signal">
+              +27 61 151 9561
+            </a>
+          </div>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <Footer slot="footer" />
+</Layout>

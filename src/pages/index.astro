@@ -6,65 +6,169 @@ import Container from '../components/ui/Container.astro';
 import Section from '../components/ui/Section.astro';
 import Button from '../components/ui/Button.astro';
 import Badge from '../components/ui/Badge.astro';
-import SystemLoop from '../components/systems/SystemLoop.astro';
-import NodeGraph from '../components/systems/NodeGraph.astro';
+import PillarFramework from '../components/systems/PillarFramework.astro';
 import GridOverlay from '../components/systems/GridOverlay.astro';
-import PlaceholderVisual from '../components/systems/PlaceholderVisual.astro';
 
-const capabilities = [
-  'IT Asset Recovery',
-  'Secure Data Destruction',
-  'Device Engineering',
-  'Digital Technology',
-  'Operational Technology',
+const workSteps = [
+  {
+    number: '01',
+    label: 'Diagnose',
+    description:
+      'Understand the current operating system — performance constraints, data, processes, people and organisational conditions.',
+  },
+  {
+    number: '02',
+    label: 'Design',
+    description:
+      'Define the future state — strategic priorities, operating model, process architecture and digital requirements.',
+  },
+  {
+    number: '03',
+    label: 'Implement',
+    description: 'Translate the design into practical organisational, process and digital change.',
+  },
+  {
+    number: '04',
+    label: 'Improve',
+    description: 'Measure outcomes, establish feedback loops and continuously improve performance.',
+  },
 ];
+
+const insightCategories = ['Digital Transformation', 'Organisational Performance', 'Data & Technology'];
 ---
 
-<Layout
-  title="Home"
-  description="Continuum Dataguard Technologies — a systems-driven technology and engineering organisation."
->
+<Layout title="Home" description="Continuum Dataguard Technologies.">
   <Header slot="header" />
 
-  <Section class="relative overflow-hidden border-b border-border">
-    <GridOverlay />
-    <Container class="relative grid items-center gap-12 lg:grid-cols-2">
+  <Section class="border-b border-border">
+    <Container class="grid items-center gap-12 lg:grid-cols-2">
       <div>
         <Badge>Continuum Dataguard Technologies</Badge>
-        <h1 class="mt-6 text-6xl text-paper">
-          A systems-driven technology and engineering organisation.
-        </h1>
-        <p class="mt-6 max-w-prose text-mist">Content for this section is pending final copy approval.</p>
+        <h1 class="mt-6 text-6xl text-paper">Consulting and digital implementation.</h1>
+        <p class="mt-6 max-w-prose text-mist">
+          Continuum helps organisations align strategy, people, process, data and digital
+          technology — so transformation produces measurable, sustainable performance. We work
+          across data and intelligence, business strategy, digital implementation and
+          organisational development, closing the gap between strategic intent and operating
+          reality.
+        </p>
         <div class="mt-8 flex flex-wrap gap-4">
-          <Button href="/capabilities">View Capabilities</Button>
+          <Button href="#pillars">View Capabilities</Button>
           <Button href="/contact" variant="secondary">Contact</Button>
         </div>
       </div>
-      <PlaceholderVisual label="Reality Layer — Photography Placeholder" aspect="aspect-square" />
+      <div class="relative flex items-center justify-center overflow-hidden border border-border-strong bg-surface aspect-square">
+        <img
+          src="/images/hero-systems-environment.webp"
+          alt="Engineer reviewing instrumentation data on a tablet in front of an industrial control panel of gauges and monitors"
+          width="1536"
+          height="339"
+          loading="eager"
+          decoding="async"
+          class="h-full w-full object-cover object-[30%_center]"
+        />
+      </div>
     </Container>
   </Section>
 
-  <Section id="systems-loop" class="border-b border-border">
+  <Section id="pillars" class="border-b border-border">
+    <Container>
+      <Badge>Consulting</Badge>
+      <h2 class="mt-6 text-4xl text-paper">Four consulting pillars.</h2>
+      <div class="mt-12">
+        <PillarFramework />
+      </div>
+    </Container>
+  </Section>
+
+  <Section id="how-we-work" class="border-b border-border">
+    <Container>
+      <Badge>How We Work</Badge>
+      <h2 class="mt-6 text-4xl text-paper">How we work.</h2>
+      <p class="mt-6 max-w-prose text-mist">
+        A structured approach for moving from strategic intent to measurable operating
+        performance.
+      </p>
+      <ol class="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        {workSteps.map((step) => (
+          <li class="border-t border-border-strong pt-4">
+            <span class="font-mono text-xs uppercase tracking-wider text-signal" aria-hidden="true">{step.number}</span>
+            <h3 class="mt-3 text-lg text-paper">{step.label}</h3>
+            <p class="mt-2 text-sm text-fog">{step.description}</p>
+          </li>
+        ))}
+      </ol>
+    </Container>
+  </Section>
+
+  <Section id="organisational-development" class="border-b border-border">
     <Container class="grid items-center gap-12 lg:grid-cols-2">
       <div>
-        <Badge>The Continuum Loop</Badge>
-        <h2 class="mt-6 text-4xl text-paper">
-          Observe. Diagnose. Engineer. Secure. Verify. Improve.
-        </h2>
-        <p class="mt-6 max-w-prose text-mist">Content for this section is pending final copy approval.</p>
+        <Badge>Organisational Development</Badge>
+        <h2 class="mt-6 text-4xl text-paper">The discipline that makes transformation sustainable.</h2>
+        <p class="mt-6 max-w-prose text-mist">
+          A digital implementation can be technically successful and still fail organisationally.
+          Organisational Development is where Continuum addresses both — building the leadership,
+          accountability, operating models, capability and culture required to adopt change and
+          continuously improve performance.
+        </p>
       </div>
-      <SystemLoop />
+      <div class="relative flex items-center justify-center overflow-hidden border border-border-strong bg-surface aspect-video">
+        <img
+          src="/images/organisational-development.webp"
+          alt="Operations team reviewing a daily performance board with safety, quality, delivery and cost metrics on a factory floor"
+          width="697"
+          height="517"
+          loading="lazy"
+          decoding="async"
+          class="h-full w-full object-cover"
+        />
+      </div>
     </Container>
   </Section>
 
-  <Section id="capabilities" class="border-b border-border">
+  <Section id="neptune" class="neptune-scope bg-void relative overflow-hidden border-b border-border">
+    <GridOverlay />
+    <Container class="relative grid items-center gap-12 lg:grid-cols-2">
+      <div class="relative flex items-center justify-center overflow-hidden border border-border-strong bg-surface aspect-video">
+        <img
+          src="/images/neptune-product-environment.webp"
+          alt="Marine sensing equipment mounted aboard a vessel, displaying navigation data against a dusk seascape"
+          width="1536"
+          height="341"
+          loading="lazy"
+          decoding="async"
+          class="h-full w-full object-cover object-[20%_center]"
+        />
+      </div>
+      <div>
+        <Badge>Product / Innovation</Badge>
+        <h2 class="mt-6 text-4xl text-paper">Neptune</h2>
+        <p class="mt-6 max-w-prose text-mist">
+          Neptune is a proprietary digital platform developed by Continuum, bringing data,
+          technology and practical decision support into one connected environment.
+        </p>
+        <p class="mt-4 max-w-prose text-mist">
+          Built from the same systems-thinking discipline that underpins Continuum's consulting
+          practice, Neptune represents the organisation's transition from advisory thinking into
+          applied digital products.
+        </p>
+      </div>
+    </Container>
+  </Section>
+
+  <Section id="insights" class="border-b border-border">
     <Container>
-      <Badge>Capabilities</Badge>
-      <h2 class="mt-6 text-4xl text-paper">Where Continuum operates.</h2>
+      <Badge>Insights</Badge>
+      <h2 class="mt-6 text-4xl text-paper">Insights.</h2>
+      <p class="mt-6 max-w-prose text-mist">
+        Perspectives on digital transformation, organisational performance and technology —
+        published as our thinking develops.
+      </p>
       <ul class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {capabilities.map((capability) => (
+        {insightCategories.map((category) => (
           <li class="border border-border-strong p-6">
-            <p class="font-mono text-sm uppercase tracking-wider text-paper">{capability}</p>
+            <h3 class="font-mono text-sm uppercase tracking-wider text-paper">{category}</h3>
             <p class="mt-3 text-sm text-fog">Content pending.</p>
           </li>
         ))}
@@ -72,37 +176,29 @@ const capabilities = [
     </Container>
   </Section>
 
-  <Section id="neptune" class="border-b border-border">
-    <Container class="grid items-center gap-12 lg:grid-cols-2">
-      <PlaceholderVisual label="Reality Layer — Photography Placeholder" aspect="aspect-video" />
-      <div>
-        <Badge>A Continuum Dataguard Technologies Product</Badge>
-        <h2 class="mt-6 text-4xl text-paper">Neptune</h2>
-        <p class="mt-6 max-w-prose text-mist">Content for this section is pending final copy approval.</p>
-        <div class="mt-8">
-          <Button href="/neptune" variant="secondary">About Neptune</Button>
-        </div>
-      </div>
-    </Container>
-  </Section>
-
-  <Section id="system" class="border-b border-border">
-    <Container>
-      <Badge>Systems Thinking</Badge>
-      <h2 class="mt-6 max-w-prose text-4xl text-paper">
-        People, data, technology, and process — as one interconnected system.
-      </h2>
-    </Container>
-    <div class="mx-auto mt-12 max-w-2xl px-4 opacity-70">
-      <NodeGraph />
-    </div>
-  </Section>
-
   <Section id="contact-cta">
     <Container class="text-center">
       <h2 class="text-4xl text-paper">Start a conversation.</h2>
+      <p class="mt-4 max-w-prose mx-auto text-mist">
+        Discuss a transformation, strategy, digital implementation or organisational challenge
+        with our team.
+      </p>
       <div class="mt-8 flex justify-center">
         <Button href="/contact">Contact Continuum</Button>
+      </div>
+      <div class="mt-6 flex flex-col items-center gap-2">
+        <p class="font-mono text-xs uppercase tracking-wider text-mist">
+          Durban, KwaZulu-Natal, South Africa
+        </p>
+        <a href="https://wa.me/27611519561" class="font-mono text-sm text-paper hover:text-signal">
+          +27 61 151 9561
+        </a>
+        <a
+          href="mailto:continuumdataguardtech@outlook.com"
+          class="font-mono text-sm text-paper hover:text-signal"
+        >
+          continuumdataguardtech@outlook.com
+        </a>
       </div>
     </Container>
   </Section>

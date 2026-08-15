@@ -5,7 +5,6 @@ import Footer from '../components/layout/Footer.astro';
 import Container from '../components/ui/Container.astro';
 import Section from '../components/ui/Section.astro';
 import Badge from '../components/ui/Badge.astro';
-import Button from '../components/ui/Button.astro';
 ---
 
 <Layout title="Contact" description="Contact Continuum Dataguard Technologies.">
@@ -14,123 +13,37 @@ import Button from '../components/ui/Button.astro';
   <Section>
     <Container class="max-w-2xl">
       <Badge>Contact</Badge>
-      <h1 class="mt-6 text-4xl text-paper">Start a conversation.</h1>
+      <h1 class="mt-6 text-4xl text-paper">Start a conversation</h1>
       <p class="mt-6 text-mist">
-        This form performs client-side validation only. Submission handling will be connected in a
-        later stage.
+        If you are working through a business, data, digital implementation, or
+        organisational-development challenge, contact Continuum directly.
       </p>
 
-      <form id="contact-form" class="mt-12 flex flex-col gap-6" novalidate>
+      <div class="mt-12 flex flex-col gap-8">
         <div>
-          <label for="name" class="font-mono text-xs uppercase tracking-wider text-mist">Name</label>
-          <input
-            id="name"
-            name="name"
-            type="text"
-            required
-            aria-describedby="name-error"
-            aria-invalid="false"
-            data-error-message="Please enter your name."
-            class="mt-2 w-full border border-border-strong bg-surface px-4 py-3 text-paper"
-          />
-          <p id="name-error" class="mt-2 text-sm text-danger" role="alert"></p>
+          <p class="font-mono text-xs uppercase tracking-wider text-mist">WhatsApp</p>
+          <a href="https://wa.me/27611519561" class="mt-2 block text-xl text-paper hover:text-signal">
+            +27 61 151 9561
+          </a>
         </div>
 
         <div>
-          <label for="email" class="font-mono text-xs uppercase tracking-wider text-mist">Email</label>
-          <input
-            id="email"
-            name="email"
-            type="email"
-            required
-            aria-describedby="email-error"
-            aria-invalid="false"
-            data-error-message="Please enter a valid email address."
-            class="mt-2 w-full border border-border-strong bg-surface px-4 py-3 text-paper"
-          />
-          <p id="email-error" class="mt-2 text-sm text-danger" role="alert"></p>
+          <p class="font-mono text-xs uppercase tracking-wider text-mist">Email</p>
+          <a
+            href="mailto:continuumdataguardtech@outlook.com"
+            class="mt-2 block text-xl text-paper hover:text-signal"
+          >
+            continuumdataguardtech@outlook.com
+          </a>
         </div>
 
         <div>
-          <label for="organization" class="font-mono text-xs uppercase tracking-wider text-mist">
-            Organization (optional)
-          </label>
-          <input
-            id="organization"
-            name="organization"
-            type="text"
-            class="mt-2 w-full border border-border-strong bg-surface px-4 py-3 text-paper"
-          />
+          <p class="font-mono text-xs uppercase tracking-wider text-mist">Location</p>
+          <p class="mt-2 text-xl text-paper">Durban, KwaZulu-Natal, South Africa</p>
         </div>
-
-        <div>
-          <label for="message" class="font-mono text-xs uppercase tracking-wider text-mist">
-            Message
-          </label>
-          <textarea
-            id="message"
-            name="message"
-            rows="5"
-            required
-            aria-describedby="message-error"
-            aria-invalid="false"
-            data-error-message="Please enter a message of at least 10 characters."
-            class="mt-2 w-full border border-border-strong bg-surface px-4 py-3 text-paper"
-          ></textarea>
-          <p id="message-error" class="mt-2 text-sm text-danger" role="alert"></p>
-        </div>
-
-        <div>
-          <Button type="submit">Send</Button>
-        </div>
-
-        <p id="form-status" class="text-sm text-mist" role="status" aria-live="polite"></p>
-      </form>
+      </div>
     </Container>
   </Section>
 
   <Footer slot="footer" />
 </Layout>
-
-<script>
-  const form = document.getElementById('contact-form');
-  const status = document.getElementById('form-status');
-
-  const fieldIds = ['name', 'email', 'message'] as const;
-  type FieldId = (typeof fieldIds)[number];
-
-  const validators: Record<FieldId, (value: string) => boolean> = {
-    name: (value) => value.trim().length > 0,
-    email: (value) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim()),
-    message: (value) => value.trim().length >= 10,
-  };
-
-  function validateField(id: FieldId): boolean {
-    const el = document.getElementById(id);
-    const errorEl = document.getElementById(id + '-error');
-    if (!el || !errorEl) return true;
-    if (!(el instanceof HTMLInputElement) && !(el instanceof HTMLTextAreaElement)) return true;
-
-    const valid = validators[id](el.value);
-    el.setAttribute('aria-invalid', String(!valid));
-    errorEl.textContent = valid ? '' : el.dataset.errorMessage || 'This field is invalid.';
-    return valid;
-  }
-
-  fieldIds.forEach((id) => {
-    const el = document.getElementById(id);
-    el?.addEventListener('blur', () => validateField(id));
-  });
-
-  form?.addEventListener('submit', (event) => {
-    event.preventDefault();
-    const results = fieldIds.map((id) => validateField(id));
-    const allValid = results.every(Boolean);
-
-    if (!status) return;
-
-    status.textContent = allValid
-      ? 'Form validated. Submission handling is not yet connected.'
-      : 'Please correct the highlighted fields.';
-  });
-</script>

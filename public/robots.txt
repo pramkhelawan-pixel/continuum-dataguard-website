@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://continuumdataguardtech.co.za/sitemap.xml

@@ -17,31 +17,31 @@
    * Color — base neutrals (dark-first; this is a fixed brand identity,
    * not an OS-theme-responsive light/dark system)
    * ------------------------------------------------------------------- */
-  --color-void: #08090b;              /* page background */
-  --color-ink: #101216;               /* base surface */
-  --color-surface: #16191e;           /* card / panel surface */
-  --color-surface-raised: #1d2127;    /* hovered / elevated surface */
-  --color-border: #262b32;            /* hairline grid lines, dividers */
-  --color-border-strong: #3a414b;     /* emphasis borders */
+  --color-void: #F7F5F0;              /* page background */
+  --color-ink: #F1EEE6;               /* base surface */
+  --color-surface: #FFFFFF;           /* card / panel surface */
+  --color-surface-raised: #ECE7DD;    /* hovered / elevated surface */
+  --color-border: #E3DDD1;            /* hairline grid lines, dividers */
+  --color-border-strong: #8F8778;     /* emphasis borders */
 
-  --color-paper: #f4f5f7;             /* primary text on dark */
-  --color-mist: #aeb4bd;              /* secondary text on dark */
-  --color-fog: #767d87;               /* tertiary / muted / disabled text */
+  --color-paper: #201E1B;             /* primary text on dark */
+  --color-mist: #55514A;              /* secondary text on dark */
+  --color-fog: #6B665D;               /* tertiary / muted / disabled text */
 
   /* Intelligence layer accent — telemetry cyan. Reserved for system
    * graphics, data, interactive/system UI. Never used on real photography
    * as a color grade, only as an overlay element. */
-  --color-signal: #3ad6f0;
-  --color-signal-strong: #85e9fa;
-  --color-signal-dim: #1b6e80;
+  --color-signal: #0B6472;
+  --color-signal-strong: #075563;
+  --color-signal-dim: #C7DBDD;
 
   /* Secondary accent — reserved strictly for the VERIFY stage and
    * verification/status states. Not decorative. */
-  --color-verify: #f0a93a;
+  --color-verify: #8A5A17;
 
   /* Functional-only states (form validation) */
-  --color-danger: #f2543d;
-  --color-success: #3adb7a;
+  --color-danger: #B23A24;
+  --color-success: #1F7A42;
 
   /* ---------------------------------------------------------------------
    * Typography
@@ -93,6 +93,24 @@
    * --------------------------------------------------------------- */
   --grid-unit: 8px;
   --grid-line-width: 1px;
+}
+
+/* Neptune / technical scope — restates the prior dark palette verbatim.
+ * Applied via a single wrapper class on the Neptune section only; this is
+ * not a general-purpose theme switch. */
+.neptune-scope {
+  --color-void: #08090b;
+  --color-ink: #101216;
+  --color-surface: #16191e;
+  --color-surface-raised: #1d2127;
+  --color-border: #262b32;
+  --color-border-strong: #3a414b;
+  --color-paper: #f4f5f7;
+  --color-mist: #aeb4bd;
+  --color-fog: #767d87;
+  --color-signal: #3ad6f0;
+  --color-signal-strong: #85e9fa;
+  --color-signal-dim: #1b6e80;
 }
 
 /* Reduced motion: collapse durations so anything still using transitions
