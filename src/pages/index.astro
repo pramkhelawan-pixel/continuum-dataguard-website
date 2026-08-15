@@ -34,7 +34,32 @@ const workSteps = [
   },
 ];
 
-const insightCategories = ['Digital Transformation', 'Organisational Performance', 'Data & Technology'];
+const insightCategories = [
+  {
+    label: 'Digital Transformation',
+    theme: 'Digital transformation is not a technology project.',
+    description:
+      'Technology implemented ahead of organisational readiness rarely produces lasting change. This work examines transformation as a systems problem — the alignment of strategy, people, process, data and technology — rather than a technology-adoption exercise.',
+    topics: [
+      'Why digital transformation fails before technology is implemented',
+      'AI adoption requires organisational readiness',
+    ],
+  },
+  {
+    label: 'Organisational Performance',
+    theme: 'Performance is a system, not an isolated KPI.',
+    description:
+      'Sustainable performance is produced by the interaction of people, process and technology, not by any single metric viewed in isolation. Drawing on Lean and systems thinking, this work considers how organisations move from measurement to genuine operational improvement.',
+    topics: ['The hidden cost of trapped time', 'From KPI measurement to performance management'],
+  },
+  {
+    label: 'Data & Technology',
+    theme: 'Technology creates value when it improves decisions.',
+    description:
+      'Data and artificial intelligence create value only when they change the quality of a decision. This includes how organisations govern data, secure their systems and manage the technology assets that underpin day-to-day operations.',
+    topics: ['AI is not a strategy', 'Data governance as an operational capability'],
+  },
+];
 ---
 
 <Layout title="Home" description="Continuum Dataguard Technologies.">
@@ -168,8 +193,14 @@ const insightCategories = ['Digital Transformation', 'Organisational Performance
       <ul class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {insightCategories.map((category) => (
           <li class="border border-border-strong p-6">
-            <h3 class="font-mono text-sm uppercase tracking-wider text-paper">{category}</h3>
-            <p class="mt-3 text-sm text-fog">Content pending.</p>
+            <h3 class="font-mono text-sm uppercase tracking-wider text-paper">{category.label}</h3>
+            <p class="mt-3 text-lg text-paper">{category.theme}</p>
+            <p class="mt-3 text-sm text-fog">{category.description}</p>
+            <ul class="mt-4 flex flex-col gap-2">
+              {category.topics.map((topic) => (
+                <li class="font-mono text-xs text-mist">— {topic}</li>
+              ))}
+            </ul>
           </li>
         ))}
       </ul>
