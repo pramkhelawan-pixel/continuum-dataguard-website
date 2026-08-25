@@ -1,0 +1,156 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/layout/Header.astro';
+import Footer from '../../components/layout/Footer.astro';
+import Container from '../../components/ui/Container.astro';
+import Section from '../../components/ui/Section.astro';
+import Badge from '../../components/ui/Badge.astro';
+import Button from '../../components/ui/Button.astro';
+import FeatureCard from '../../components/neptune/FeatureCard.astro';
+import DownloadCTA from '../../components/neptune/DownloadCTA.astro';
+import Disclaimer from '../../components/neptune/Disclaimer.astro';
+import { features, pricing, disclaimerRefs } from '../../data/neptune';
+
+const liveFeatures = features.filter((feature) => feature.status === 'live');
+const upcomingFeatures = features.filter((feature) => feature.status === 'coming-soon');
+---
+
+<Layout
+  title="Neptune"
+  description="Neptune is a proprietary digital platform from Continuum Dataguard Technologies, bringing data, technology and practical decision support into one connected environment."
+>
+  <Header slot="header" />
+
+  <Section class="border-b border-border">
+    <Container class="grid items-center gap-12 lg:grid-cols-2">
+      <div>
+        <Badge>A Continuum Dataguard Technologies Product</Badge>
+        <h1 class="mt-6 text-5xl text-paper">Neptune</h1>
+        <p class="mt-6 max-w-prose text-mist">
+          Neptune is a proprietary digital platform developed by Continuum, bringing data,
+          technology and practical decision support into one connected environment.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-4">
+          <DownloadCTA />
+          <Button href="#features" variant="secondary">Explore Features</Button>
+        </div>
+      </div>
+      <div class="relative flex items-center justify-center overflow-hidden border border-border-strong bg-surface aspect-video">
+        <img
+          src="/images/neptune-product-environment.webp"
+          alt="Marine sensing equipment mounted aboard a vessel, displaying navigation data against a dusk seascape"
+          width="1536"
+          height="341"
+          loading="eager"
+          decoding="async"
+          class="h-full w-full object-cover object-[20%_center]"
+        />
+      </div>
+    </Container>
+  </Section>
+
+  <Section class="border-b border-border">
+    <Container class="max-w-3xl">
+      <Badge>What Neptune Does</Badge>
+      <h2 class="mt-6 text-4xl text-paper">Built from the same systems-thinking discipline.</h2>
+      <p class="mt-6 text-mist">
+        Built from the same systems-thinking discipline that underpins Continuum's consulting
+        practice, Neptune represents the organisation's transition from advisory thinking into
+        applied digital products.
+      </p>
+    </Container>
+  </Section>
+
+  <Section id="features" class="border-b border-border">
+    <Container>
+      <Badge>Core Features</Badge>
+      <h2 class="mt-6 text-4xl text-paper">What's in Neptune.</h2>
+      <ul class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3" role="list">
+        {liveFeatures.map((feature) => (
+          <li>
+            <FeatureCard feature={feature} />
+          </li>
+        ))}
+      </ul>
+    </Container>
+  </Section>
+
+  <Section id="pricing" class="border-b border-border">
+    <Container class="max-w-3xl">
+      <Badge>Free vs Premium</Badge>
+      <h2 class="mt-6 text-4xl text-paper">Getting started.</h2>
+      <div class="mt-12 grid gap-6 sm:grid-cols-2">
+        <div class="border border-border-strong p-6">
+          <p class="font-mono text-xs uppercase tracking-wider text-signal">{pricing.free.name}</p>
+          <p class="mt-3 text-sm text-fog">Available now.</p>
+        </div>
+        <div class="border border-border p-6 opacity-70">
+          <div class="flex items-center justify-between gap-4">
+            <p class="font-mono text-xs uppercase tracking-wider text-signal">{pricing.premium.name}</p>
+            <Badge>Coming Soon</Badge>
+          </div>
+          <p class="mt-3 text-sm text-fog">Pricing and features to be announced.</p>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <Section id="roadmap" class="border-b border-border">
+    <Container>
+      <Badge>Roadmap</Badge>
+      <h2 class="mt-6 text-4xl text-paper">What's next for Neptune.</h2>
+      <ul class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3" role="list">
+        {upcomingFeatures.map((feature) => (
+          <li>
+            <FeatureCard feature={feature} />
+          </li>
+        ))}
+      </ul>
+    </Container>
+  </Section>
+
+  <Section class="border-b border-border">
+    <Container class="max-w-3xl">
+      <Badge>South Africa / KwaZulu-Natal</Badge>
+      <h2 class="mt-6 text-4xl text-paper">Built for South African waters.</h2>
+      <p class="mt-6 text-mist">
+        Neptune is developed by Continuum Dataguard Technologies in Durban, KwaZulu-Natal.
+      </p>
+    </Container>
+  </Section>
+
+  <Section id="disclaimers" class="border-b border-border">
+    <Container>
+      <Badge>Disclaimers</Badge>
+      <h2 class="mt-6 text-4xl text-paper">Important information.</h2>
+      <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {disclaimerRefs.map((disclaimer) => (
+          <Disclaimer disclaimer={disclaimer} />
+        ))}
+      </div>
+    </Container>
+  </Section>
+
+  <Section id="support">
+    <Container class="text-center">
+      <h2 class="text-4xl text-paper">Need help with Neptune?</h2>
+      <p class="mt-4 max-w-prose mx-auto text-mist">Contact Continuum directly for support.</p>
+      <div class="mt-8 flex justify-center gap-4">
+        <DownloadCTA />
+      </div>
+      <div class="mt-6 flex flex-col items-center gap-2">
+        <a href="https://wa.me/27611519561" class="font-mono text-sm text-paper hover:text-signal">
+          WhatsApp: +27 61 151 9561
+        </a>
+        <a
+          href="mailto:continuumdataguardtech@outlook.com"
+          class="font-mono text-sm text-paper hover:text-signal"
+        >
+          continuumdataguardtech@outlook.com
+        </a>
+      </div>
+    </Container>
+  </Section>
+
+  <Footer slot="footer" />
+</Layout>

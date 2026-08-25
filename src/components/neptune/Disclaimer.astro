@@ -1,0 +1,24 @@
+---
+import type { NeptuneDisclaimerRef } from '../../data/neptune';
+
+interface Props {
+  disclaimer: NeptuneDisclaimerRef;
+  class?: string;
+}
+
+const { disclaimer, class: className } = Astro.props;
+---
+
+<div class:list={['border border-border-strong p-6', className]}>
+  <p class="font-mono text-xs uppercase tracking-wider text-signal">Disclaimer</p>
+  <h3 class="mt-2 text-lg text-paper">{disclaimer.label}</h3>
+  <p class="mt-3 text-sm text-fog">
+    Full disclaimer text pending legal review.
+  </p>
+  <a
+    href={`/terms${disclaimer.termsAnchor}`}
+    class="mt-4 inline-block font-mono text-xs uppercase tracking-wider text-mist hover:text-signal"
+  >
+    See Terms of Use
+  </a>
+</div>

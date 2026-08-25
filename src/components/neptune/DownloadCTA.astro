@@ -1,0 +1,28 @@
+---
+import Button from '../ui/Button.astro';
+import { playStoreUrl } from '../../data/neptune';
+
+interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props;
+---
+
+{playStoreUrl ? (
+  <Button href={playStoreUrl} class={className}>
+    Get Neptune on Google Play
+  </Button>
+) : (
+  <button
+    type="button"
+    disabled
+    aria-disabled="true"
+    class:list={[
+      'inline-flex items-center justify-center gap-2 rounded-xs px-6 py-3 font-mono text-sm uppercase tracking-wide border border-border-strong text-fog cursor-not-allowed opacity-60',
+      className,
+    ]}
+  >
+    Coming Soon — Google Play
+  </button>
+)}

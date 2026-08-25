@@ -1,0 +1,28 @@
+---
+import Badge from '../ui/Badge.astro';
+import type { NeptuneFeature } from '../../data/neptune';
+
+interface Props {
+  feature: NeptuneFeature;
+  class?: string;
+}
+
+const { feature, class: className } = Astro.props;
+const isComingSoon = feature.status === 'coming-soon';
+---
+
+<div
+  class:list={[
+    'border p-6',
+    isComingSoon ? 'border-border opacity-70' : 'border-border-strong',
+    className,
+  ]}
+>
+  <div class="flex items-start justify-between gap-4">
+    <h3 class="font-mono text-sm uppercase tracking-wider text-paper">{feature.title}</h3>
+    {isComingSoon && <Badge>Coming Soon</Badge>}
+  </div>
+  {feature.description && (
+    <p class="mt-3 text-sm text-fog">{feature.description}</p>
+  )}
+</div>
