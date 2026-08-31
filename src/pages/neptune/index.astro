@@ -13,14 +13,40 @@ import { features, pricing, disclaimerRefs } from '../../data/neptune';
 
 const liveFeatures = features.filter((feature) => feature.status === 'live');
 const upcomingFeatures = features.filter((feature) => feature.status === 'coming-soon');
+
+const pageDescription =
+  'Neptune is a marine intelligence app for South African anglers, combining tides, marine conditions, solunar data, species intelligence and fishing decision support.';
+
+const neptuneURL = new URL('/neptune/', Astro.site).href;
+const organizationURL = new URL('/', Astro.site).href;
+
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'Neptune',
+  applicationCategory: 'SportsApplication',
+  description: pageDescription,
+  url: neptuneURL,
+  publisher: {
+    '@type': 'Organization',
+    name: 'Continuum Dataguard Technologies',
+    url: organizationURL,
+  },
+  creator: {
+    '@type': 'Organization',
+    name: 'Continuum Dataguard Technologies',
+    url: organizationURL,
+  },
+};
 ---
 
 <Layout
-  title="Neptune — South African Marine Intelligence for Anglers"
-  description="Neptune is a South African marine intelligence app for anglers, providing tides, marine conditions, solunar intelligence, species insights and smarter fishing decisions."
+  title="Neptune Marine Intelligence App | South African Anglers"
+  description={pageDescription}
   image="/images/neptune-product-environment.webp"
-  titleSeparator="|"
+  appendSiteName={false}
 >
+  <script slot="head" type="application/ld+json" is:inline set:html={JSON.stringify(structuredData)}></script>
   <Header slot="header" />
 
   <Section class="border-b border-border">
