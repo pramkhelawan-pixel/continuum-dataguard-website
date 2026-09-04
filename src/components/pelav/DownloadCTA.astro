@@ -1,6 +1,6 @@
 ---
 import Button from '../ui/Button.astro';
-import { playStoreUrl } from '../../data/neptune';
+import { playStoreUrl } from '../../data/pelav';
 
 interface Props {
   class?: string;
@@ -11,7 +11,7 @@ const { class: className } = Astro.props;
 
 {playStoreUrl ? (
   <Button href={playStoreUrl} class={className}>
-    Get Neptune on Google Play
+    Get PELAV™ on Google Play
   </Button>
 ) : (
   <button

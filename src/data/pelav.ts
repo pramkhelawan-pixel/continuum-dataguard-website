@@ -1,10 +1,10 @@
-export interface NeptuneFeature {
+export interface PelavFeature {
   title: string;
   description: string;
   status: 'live' | 'coming-soon';
 }
 
-export const features: NeptuneFeature[] = [
+export const features: PelavFeature[] = [
   {
     title: 'Best Fishing Window',
     description: '',
@@ -46,19 +46,19 @@ export const features: NeptuneFeature[] = [
 // renders a disabled "Coming Soon" state instead of a fake link.
 export const playStoreUrl: string | null = null;
 
-export interface NeptunePricingTier {
+export interface PelavPricingTier {
   name: string;
   status: 'live' | 'coming-soon';
 }
 
-export interface NeptunePricing {
-  free: NeptunePricingTier;
-  premium: NeptunePricingTier;
+export interface PelavPricing {
+  free: PelavPricingTier;
+  premium: PelavPricingTier;
 }
 
 // Feature-by-tier allocation is not yet confirmed — neither tier lists
 // specific features until that is decided.
-export const pricing: NeptunePricing = {
+export const pricing: PelavPricing = {
   free: {
     name: 'Free',
     status: 'live',
@@ -69,14 +69,14 @@ export const pricing: NeptunePricing = {
   },
 };
 
-export interface NeptuneDisclaimerRef {
+export interface PelavDisclaimerRef {
   label: string;
   termsAnchor: string;
 }
 
 // References only — actual disclaimer legal text is written in terms.astro,
 // not here (blocked pending Phase 1 legal review).
-export const disclaimerRefs: NeptuneDisclaimerRef[] = [
+export const disclaimerRefs: PelavDisclaimerRef[] = [
   {
     label: 'Marine and Fishing Intelligence',
     termsAnchor: '#marine-fishing-disclaimer',

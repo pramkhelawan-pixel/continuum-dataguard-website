@@ -6,27 +6,27 @@ import Container from '../../components/ui/Container.astro';
 import Section from '../../components/ui/Section.astro';
 import Badge from '../../components/ui/Badge.astro';
 import Button from '../../components/ui/Button.astro';
-import FeatureCard from '../../components/neptune/FeatureCard.astro';
-import DownloadCTA from '../../components/neptune/DownloadCTA.astro';
-import Disclaimer from '../../components/neptune/Disclaimer.astro';
-import { features, pricing, disclaimerRefs } from '../../data/neptune';
+import FeatureCard from '../../components/pelav/FeatureCard.astro';
+import DownloadCTA from '../../components/pelav/DownloadCTA.astro';
+import Disclaimer from '../../components/pelav/Disclaimer.astro';
+import { features, pricing, disclaimerRefs } from '../../data/pelav';
 
 const liveFeatures = features.filter((feature) => feature.status === 'live');
 const upcomingFeatures = features.filter((feature) => feature.status === 'coming-soon');
 
 const pageDescription =
-  'Neptune is a marine intelligence app for South African anglers, combining tides, marine conditions, solunar data, species intelligence and fishing decision support.';
+  'PELAV™ is a marine intelligence app for South African anglers, combining tides, marine conditions, solunar data, species intelligence and fishing decision support.';
 
-const neptuneURL = new URL('/neptune/', Astro.site).href;
+const pelavURL = new URL('/pelav/', Astro.site).href;
 const organizationURL = new URL('/', Astro.site).href;
 
 const structuredData = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication',
-  name: 'Neptune',
+  name: 'PELAV™',
   applicationCategory: 'SportsApplication',
   description: pageDescription,
-  url: neptuneURL,
+  url: pelavURL,
   publisher: {
     '@type': 'Organization',
     name: 'Continuum Dataguard Technologies',
@@ -41,9 +41,9 @@ const structuredData = {
 ---
 
 <Layout
-  title="Neptune Marine Intelligence App | South African Anglers"
+  title="PELAV™ Marine Intelligence App | South African Anglers"
   description={pageDescription}
-  image="/images/neptune-product-environment.webp"
+  image="/images/marine-product-environment.webp"
   appendSiteName={false}
 >
   <script slot="head" type="application/ld+json" is:inline set:html={JSON.stringify(structuredData)}></script>
@@ -53,9 +53,9 @@ const structuredData = {
     <Container class="grid items-center gap-12 lg:grid-cols-2">
       <div>
         <Badge>A Continuum Dataguard Technologies Product</Badge>
-        <h1 class="mt-6 text-5xl text-paper">Neptune</h1>
+        <h1 class="mt-6 text-5xl text-paper">PELAV™</h1>
         <p class="mt-6 max-w-prose text-mist">
-          Neptune is a proprietary digital platform developed by Continuum, bringing data,
+          PELAV™ is a proprietary digital platform developed by Continuum, bringing data,
           technology and practical decision support into one connected environment.
         </p>
         <div class="mt-8 flex flex-wrap gap-4">
@@ -65,7 +65,7 @@ const structuredData = {
       </div>
       <div class="relative flex items-center justify-center overflow-hidden border border-border-strong bg-surface aspect-video">
         <img
-          src="/images/neptune-product-environment.webp"
+          src="/images/marine-product-environment.webp"
           alt="Marine sensing equipment mounted aboard a vessel, displaying navigation data against a dusk seascape"
           width="1536"
           height="341"
@@ -79,11 +79,11 @@ const structuredData = {
 
   <Section class="border-b border-border">
     <Container class="max-w-3xl">
-      <Badge>What Neptune Does</Badge>
+      <Badge>What PELAV™ Does</Badge>
       <h2 class="mt-6 text-4xl text-paper">Built from the same systems-thinking discipline.</h2>
       <p class="mt-6 text-mist">
         Built from the same systems-thinking discipline that underpins Continuum's consulting
-        practice, Neptune represents the organisation's transition from advisory thinking into
+        practice, PELAV™ represents the organisation's transition from advisory thinking into
         applied digital products.
       </p>
     </Container>
@@ -92,7 +92,7 @@ const structuredData = {
   <Section id="features" class="border-b border-border">
     <Container>
       <Badge>Core Features</Badge>
-      <h2 class="mt-6 text-4xl text-paper">What's in Neptune.</h2>
+      <h2 class="mt-6 text-4xl text-paper">What's in PELAV™.</h2>
       <ul class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3" role="list">
         {liveFeatures.map((feature) => (
           <li>
@@ -126,7 +126,7 @@ const structuredData = {
   <Section id="roadmap" class="border-b border-border">
     <Container>
       <Badge>Roadmap</Badge>
-      <h2 class="mt-6 text-4xl text-paper">What's next for Neptune.</h2>
+      <h2 class="mt-6 text-4xl text-paper">What's next for PELAV™.</h2>
       <ul class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3" role="list">
         {upcomingFeatures.map((feature) => (
           <li>
@@ -142,7 +142,7 @@ const structuredData = {
       <Badge>South Africa / KwaZulu-Natal</Badge>
       <h2 class="mt-6 text-4xl text-paper">Built for South African waters.</h2>
       <p class="mt-6 text-mist">
-        Neptune is developed by Continuum Dataguard Technologies in Durban, KwaZulu-Natal.
+        PELAV™ is developed by Continuum Dataguard Technologies in Durban, KwaZulu-Natal.
       </p>
     </Container>
   </Section>
@@ -161,7 +161,7 @@ const structuredData = {
 
   <Section id="support">
     <Container class="text-center">
-      <h2 class="text-4xl text-paper">Need help with Neptune?</h2>
+      <h2 class="text-4xl text-paper">Need help with PELAV™?</h2>
       <p class="mt-4 max-w-prose mx-auto text-mist">Contact Continuum directly for support.</p>
       <div class="mt-8 flex justify-center gap-4">
         <DownloadCTA />

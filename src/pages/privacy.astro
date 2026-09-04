@@ -7,7 +7,7 @@ import Section from '../components/ui/Section.astro';
 import Badge from '../components/ui/Badge.astro';
 ---
 
-<Layout title="Privacy Policy" description="How Continuum Dataguard Technologies handles personal information collected through this website and the Neptune app.">
+<Layout title="Privacy Policy" description="How Continuum Dataguard Technologies handles personal information collected through this website and the PELAV™ app.">
   <Header slot="header" />
 
   <Section>
@@ -16,22 +16,22 @@ import Badge from '../components/ui/Badge.astro';
       <h1 class="mt-6 text-4xl text-paper">Privacy Policy</h1>
       <p class="mt-6 text-mist">
         This Privacy Policy explains how Continuum Dataguard Technologies ("Continuum", "we",
-        "us") handles personal information in connection with this website and the Neptune
+        "us") handles personal information in connection with this website and the PELAV™
         mobile app, which Continuum develops and operates.
       </p>
 
       <div class="mt-12 flex flex-col gap-10">
         <div>
-          <h2 class="text-2xl text-paper">Introduction</h2>
+          <h2 class="text-2xl text-paper">Introduction — Both</h2>
           <p class="mt-3 text-mist">
             This policy applies to the Continuum Dataguard Technologies website and to the
-            Neptune app. It explains what personal information may be collected, how it is
+            PELAV™ app. It explains what personal information may be collected, how it is
             used, and the choices available to you.
           </p>
         </div>
 
         <div>
-          <h2 class="text-2xl text-paper">Information collected through this website</h2>
+          <h2 class="text-2xl text-paper">Information collected through this website — Website</h2>
           <p class="mt-3 text-mist">
             This website does not use a contact form. It displays a direct email address and
             WhatsApp number so you can contact Continuum yourself. Any information you choose to
@@ -42,9 +42,9 @@ import Badge from '../components/ui/Badge.astro';
         </div>
 
         <div>
-          <h2 class="text-2xl text-paper">Information collected through the Neptune app</h2>
+          <h2 class="text-2xl text-paper">Information collected through the PELAV™ app — PELAV™ App</h2>
           <p class="mt-3 text-mist">
-            Using the Neptune app requires an account. The app collects the following categories
+            Using the PELAV™ app requires an account. The app collects the following categories
             of information:
           </p>
 
@@ -58,8 +58,8 @@ import Badge from '../components/ui/Badge.astro';
           <h3 class="mt-6 text-lg text-paper">Location and GPS data</h3>
           <p class="mt-2 text-mist">
             When you use a location-based feature (such as viewing nearby fishing spots, or
-            checking marine and weather conditions for your area), Neptune will ask for
-            permission to access your device's location while the app is in use. Neptune does
+            checking marine and weather conditions for your area), PELAV™ will ask for
+            permission to access your device's location while the app is in use. PELAV™ does
             not access your location in the background or when the app is closed. Your
             coordinates are used to request weather, marine and tide information for that
             location, as described further under "Cloud services and third-party services"
@@ -67,10 +67,19 @@ import Badge from '../components/ui/Badge.astro';
             session records — those records store a location description rather than raw GPS
             coordinates.
           </p>
+          <p class="mt-2 text-mist">
+            PELAV™'s Maps feature displays map imagery using OpenStreetMap. When the map is
+            shown, your device requests map tiles directly from OpenStreetMap's servers based on
+            the area of the map currently in view. When the map is centred on your own position,
+            this reveals your approximate location, at a resolution determined by the map's zoom
+            level, to OpenStreetMap; your device's IP address is also visible to OpenStreetMap's
+            servers as part of these requests. OpenStreetMap does not receive your PELAV™
+            account information and has no means of linking these tile requests to your identity.
+          </p>
 
           <h3 class="mt-6 text-lg text-paper">Catch and fishing session records</h3>
           <p class="mt-2 text-mist">
-            When you log a catch or a fishing session, Neptune stores the information you enter —
+            When you log a catch or a fishing session, PELAV™ stores the information you enter —
             such as species, date and time, a location description, weight and length (where
             provided), bait, hook, trace and notes — together with, where available, a
             snapshot of weather and marine conditions (such as wind, swell, tide and moon phase)
@@ -79,7 +88,7 @@ import Badge from '../components/ui/Badge.astro';
 
           <h3 class="mt-6 text-lg text-paper">Digital Fishing Licence Vault</h3>
           <p class="mt-2 text-mist">
-            If you choose to use the Digital Fishing Licence Vault, Neptune stores a copy of your
+            If you choose to use the Digital Fishing Licence Vault, PELAV™ stores a copy of your
             licence document together with details such as your name, licence number, issuing
             authority and validity dates, entirely on your own device. This information is not
             uploaded to Supabase or any other Continuum server, and Continuum cannot access it.
@@ -94,10 +103,10 @@ import Badge from '../components/ui/Badge.astro';
         </div>
 
         <div>
-          <h2 class="text-2xl text-paper">How information is used</h2>
+          <h2 class="text-2xl text-paper">How information is used — Both</h2>
           <p class="mt-3 text-mist">
             Information submitted through the website's contact form is used solely to respond
-            to your enquiry. Information collected through the Neptune app is used to provide
+            to your enquiry. Information collected through the PELAV™ app is used to provide
             your account and the features you use — including storing your catch and fishing
             session records for your own reference, providing weather, marine and tide
             information, maintaining your Free/Premium account status, and diagnosing and fixing
@@ -107,7 +116,7 @@ import Badge from '../components/ui/Badge.astro';
         </div>
 
         <div>
-          <h2 class="text-2xl text-paper">Contact enquiries</h2>
+          <h2 class="text-2xl text-paper">Contact enquiries — Website</h2>
           <p class="mt-3 text-mist">
             When you submit the contact form, the details you provide are used to understand and
             respond to your enquiry. We do not share the contents of your enquiry other than as
@@ -116,22 +125,25 @@ import Badge from '../components/ui/Badge.astro';
         </div>
 
         <div>
-          <h2 class="text-2xl text-paper">Cloud services and third-party services</h2>
+          <h2 class="text-2xl text-paper">Cloud services and third-party services — PELAV™ App</h2>
           <p class="mt-3 text-mist">
-            Neptune's account, catch, fishing session and account-status data is stored using
+            PELAV™'s account, catch, fishing session and account-status data is stored using
             Supabase, our backend and database provider. This project's Supabase infrastructure
             is hosted in the eu-west-1 (Ireland) region.
           </p>
           <p class="mt-3 text-mist">
-            To provide weather and marine condition information, Neptune sends your device's
+            To provide weather and marine condition information, PELAV™ sends your device's
             coordinates directly to Open-Meteo, a third-party weather data provider, when you
-            request that information for your location. To provide tide information, Neptune
-            sends an approximate, rounded version of your coordinates to our own backend, which
-            requests tide data from WorldTides on your behalf — WorldTides does not receive your
-            exact location directly from your device.
+            request that information for your location. To provide tide information, PELAV™
+            sends an approximate, rounded version of your coordinates (to approximately 1.1 km
+            precision) to our own backend, which requests tide data from WorldTides on your
+            behalf — WorldTides does not receive your exact location directly from your device.
+            Our backend temporarily caches the rounded coordinates and the resulting tide data
+            for up to approximately 12 hours to avoid repeated requests; this cache is not linked
+            to your account.
           </p>
           <p class="mt-3 text-mist">
-            Neptune uses Firebase Crashlytics, a Google service, to help us identify and fix
+            PELAV™ uses Firebase Crashlytics, a Google service, to help us identify and fix
             technical problems. If the published app encounters an error, technical diagnostic
             information (such as device type, operating system version, and details about the
             error) may be sent to Firebase. This only applies to the published app, not to
@@ -140,7 +152,7 @@ import Badge from '../components/ui/Badge.astro';
         </div>
 
         <div>
-          <h2 class="text-2xl text-paper">Website and technical information</h2>
+          <h2 class="text-2xl text-paper">Website and technical information — Website</h2>
           <p class="mt-3 text-mist">
             As with most websites, our hosting infrastructure may automatically process standard
             technical information — such as IP address, browser type and access times — as part
@@ -150,16 +162,16 @@ import Badge from '../components/ui/Badge.astro';
         </div>
 
         <div>
-          <h2 class="text-2xl text-paper">Cookies and similar technologies</h2>
+          <h2 class="text-2xl text-paper">Cookies and similar technologies — Both</h2>
           <p class="mt-3 text-mist">
             This website does not currently use cookies or similar tracking technologies. The
-            Neptune app does not use advertising or analytics tracking technologies. If this
+            PELAV™ app does not use advertising or analytics tracking technologies. If this
             changes in future, this policy will be updated accordingly.
           </p>
         </div>
 
         <div>
-          <h2 class="text-2xl text-paper">Disclosure of information</h2>
+          <h2 class="text-2xl text-paper">Disclosure of information — Both</h2>
           <p class="mt-3 text-mist">
             We do not sell or trade personal information. Information is disclosed only to the
             service providers described above (necessary to operate the website and the app), or
@@ -168,34 +180,34 @@ import Badge from '../components/ui/Badge.astro';
         </div>
 
         <div>
-          <h2 class="text-2xl text-paper">Data security</h2>
+          <h2 class="text-2xl text-paper">Data security — Both</h2>
           <p class="mt-3 text-mist">
             We take reasonable measures to protect personal information against loss, misuse and
             unauthorised access, appropriate to the nature of the information involved. Your
             catch and fishing session records are stored in a way that restricts access to your
-            own account — other Neptune users cannot view your records.
+            own account — other PELAV™ users cannot view your records.
           </p>
         </div>
 
         <div>
-          <h2 class="text-2xl text-paper">Data retention</h2>
+          <h2 class="text-2xl text-paper">Data retention — Both</h2>
           <p class="mt-3 text-mist">
             Personal information submitted through the website's contact form is retained only
             for as long as is reasonably necessary to respond to your enquiry, after which it
             may be securely deleted.
           </p>
           <p class="mt-3 text-mist">
-            There is currently no fixed automatic retention period for Neptune app account,
+            There is currently no fixed automatic retention period for PELAV™ app account,
             catch or fishing-session data. This data is kept until you delete an individual
             record, or until you delete your account as described below.
           </p>
         </div>
 
         <div>
-          <h2 class="text-2xl text-paper">Account and data deletion</h2>
+          <h2 class="text-2xl text-paper">Account and data deletion — PELAV™ App</h2>
           <p class="mt-3 text-mist">
             You can delete an individual catch record at any time from within the app. You can
-            also permanently delete your entire Neptune account from the app's Profile screen.
+            also permanently delete your entire PELAV™ account from the app's Profile screen.
             Account deletion is immediate once confirmed and cannot be undone. Deleting your
             account removes your catch records, your fishing session records, your account
             status information, and your authentication/account data.
@@ -209,36 +221,36 @@ import Badge from '../components/ui/Badge.astro';
         </div>
 
         <div>
-          <h2 class="text-2xl text-paper">Your rights under South African law</h2>
+          <h2 class="text-2xl text-paper">Your rights under South African law — Both</h2>
           <p class="mt-3 text-mist">
             South Africa's Protection of Personal Information Act (POPIA) gives individuals
             rights in relation to their personal information, including the right to request
             access to, correction of, or deletion of personal information held about them, and
             the right to lodge a complaint with the Information Regulator. Requests relating to
-            personal information collected through the website or the Neptune app can be
+            personal information collected through the website or the PELAV™ app can be
             directed to Continuum using the contact details below.
           </p>
         </div>
 
         <div>
-          <h2 class="text-2xl text-paper">International data location</h2>
+          <h2 class="text-2xl text-paper">International data location — PELAV™ App</h2>
           <p class="mt-3 text-mist">
-            The infrastructure Continuum uses to operate the Neptune app, including Supabase and
+            The infrastructure Continuum uses to operate the PELAV™ app, including Supabase and
             Firebase, may store and process information outside South Africa. Using the website
             or the app may therefore involve your information being processed internationally.
           </p>
         </div>
 
         <div>
-          <h2 class="text-2xl text-paper">Children's privacy</h2>
+          <h2 class="text-2xl text-paper">Children's privacy — Both</h2>
           <p class="mt-3 text-mist">
-            The website and the Neptune app are not directed at children, and we do not
+            The website and the PELAV™ app are not directed at children, and we do not
             knowingly collect personal information from children.
           </p>
         </div>
 
         <div>
-          <h2 class="text-2xl text-paper">Contact us about this policy</h2>
+          <h2 class="text-2xl text-paper">Contact us about this policy — Both</h2>
           <p class="mt-3 text-mist">
             Questions or requests regarding personal information can be directed to:
           </p>
@@ -255,10 +267,10 @@ import Badge from '../components/ui/Badge.astro';
         </div>
 
         <div>
-          <h2 class="text-2xl text-paper">Changes to this policy</h2>
+          <h2 class="text-2xl text-paper">Changes to this policy — Both</h2>
           <p class="mt-3 text-mist">
             This policy may be updated from time to time to reflect changes to the website, the
-            Neptune app, or applicable law. Any changes will be posted on this page.
+            PELAV™ app, or applicable law. Any changes will be posted on this page.
           </p>
         </div>
       </div>

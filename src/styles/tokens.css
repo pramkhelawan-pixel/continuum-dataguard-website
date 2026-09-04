@@ -95,10 +95,10 @@
   --grid-line-width: 1px;
 }
 
-/* Neptune / technical scope — restates the prior dark palette verbatim.
- * Applied via a single wrapper class on the Neptune section only; this is
+/* PELAV / technical scope — restates the prior dark palette verbatim.
+ * Applied via a single wrapper class on the PELAV section only; this is
  * not a general-purpose theme switch. */
-.neptune-scope {
+.pelav-scope {
   --color-void: #08090b;
   --color-ink: #101216;
   --color-surface: #16191e;
