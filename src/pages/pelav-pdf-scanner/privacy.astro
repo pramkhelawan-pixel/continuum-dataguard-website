@@ -1,0 +1,148 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/layout/Header.astro';
+import Footer from '../../components/layout/Footer.astro';
+import Container from '../../components/ui/Container.astro';
+import Section from '../../components/ui/Section.astro';
+import Badge from '../../components/ui/Badge.astro';
+
+const lastUpdated = 'September 8, 2026';
+---
+
+<Layout
+  title="PELAV PDF Scanner Privacy Policy"
+  description="Privacy Policy for PELAV PDF Scanner, developed by Continuum Dataguard Technologies: how the app handles documents, local storage, sharing, and its use of Google ML Kit Document Scanner."
+>
+  <Header slot="header" />
+
+  <Section>
+    <Container class="max-w-3xl">
+      <Badge>Privacy Policy</Badge>
+      <h1 class="mt-6 text-4xl text-paper">PELAV PDF Scanner Privacy Policy</h1>
+      <p class="mt-6 text-mist">
+        PELAV PDF Scanner is an Android application developed and published by Continuum
+        Dataguard Technologies ("Continuum", "we", "us"). This Privacy Policy explains how the
+        app handles information when you scan documents and create PDF files.
+      </p>
+      <p class="mt-3 text-mist">Last updated: {lastUpdated}</p>
+
+      <div class="mt-12 flex flex-col gap-10">
+        <div>
+          <h2 class="text-2xl text-paper">How PELAV PDF Scanner processes your documents</h2>
+          <p class="mt-3 text-mist">
+            PELAV PDF Scanner is designed to work as a local, on-device document scanning tool.
+            In this version of the app (V1), Continuum does not operate a cloud backend or
+            server for PELAV PDF Scanner, and the app does not automatically upload or
+            synchronise your scanned documents to any Continuum-controlled cloud storage.
+          </p>
+          <p class="mt-3 text-mist">
+            When you scan a document, the app captures source images and generates a PDF file,
+            which is stored in the app's own private application storage on your device — not in
+            shared or public storage accessible to other apps. Intermediate scanner images used to
+            produce the PDF are cleaned up automatically once the PDF has been generated
+            successfully. If PDF generation fails for any reason, the source images are
+            deliberately not deleted, so that your only copy of the captured document is not lost.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-2xl text-paper">Sharing your documents</h2>
+          <p class="mt-3 text-mist">
+            PELAV PDF Scanner does not share, transmit or upload your generated PDF files anywhere
+            on its own. Document sharing only happens when you explicitly choose to share a file
+            using Android's built-in system sharing mechanism (for example, to send a PDF to
+            another app, contact, or service of your choosing). What happens to a document after
+            you share it is governed by the privacy practices of the app or service you chose to
+            share it with.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-2xl text-paper">Google ML Kit Document Scanner and Google Play services</h2>
+          <p class="mt-3 text-mist">
+            PELAV PDF Scanner uses Google's ML Kit Document Scanner through Google Play services.
+            Google's documentation states that the Document Scanner models, scanning logic and
+            user interface are dynamically downloaded by Google Play services. PELAV itself does
+            not operate a backend server or upload scanned documents to PELAV-controlled cloud
+            storage.
+          </p>
+          <p class="mt-3 text-mist">
+            Google Play services and Google services may communicate with Google infrastructure
+            for their own operation, including downloading or updating the scanner components.
+            Such processing is governed by Google's own terms and privacy practices — see
+            <a href="https://policies.google.com/privacy" class="text-paper hover:text-signal" target="_blank" rel="noopener noreferrer"> Google's Privacy Policy</a>
+            for more information.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-2xl text-paper">Accounts, analytics and advertising</h2>
+          <p class="mt-3 text-mist">
+            PELAV PDF Scanner does not require or offer user accounts, registration or login in
+            this version of the app. Continuum does not implement its own analytics or advertising
+            services within PELAV PDF Scanner, and does not use the app to collect information for
+            marketing purposes.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-2xl text-paper">Data retention and deletion</h2>
+          <p class="mt-3 text-mist">
+            Generated PDF files remain in the app's private storage until they are removed by the
+            operating system's app-data lifecycle, or until you uninstall the app or clear its
+            app data — either of which removes the app's private storage, including generated
+            PDFs. This version of the app does not currently provide an in-app document
+            library or delete function for managing previously generated PDFs.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-2xl text-paper">Your rights</h2>
+          <p class="mt-3 text-mist">
+            Continuum Dataguard Technologies is based in South Africa. Where applicable, South
+            Africa's Protection of Personal Information Act (POPIA) gives individuals rights in
+            relation to their personal information, including the right to request access to,
+            correction of, or deletion of personal information held about them, and the right to
+            lodge a complaint with the Information Regulator. If you are located in another
+            jurisdiction, you may have additional rights under applicable local privacy and
+            data-protection laws.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-2xl text-paper">Children's privacy</h2>
+          <p class="mt-3 text-mist">
+            PELAV PDF Scanner is not directed at children, and we do not knowingly collect
+            personal information from children through the app.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-2xl text-paper">Changes to this policy</h2>
+          <p class="mt-3 text-mist">
+            This policy may be updated from time to time to reflect changes to PELAV PDF Scanner
+            or applicable law. Any changes will be posted on this page with an updated "Last
+            updated" date.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-2xl text-paper">Contact us about this policy</h2>
+          <p class="mt-3 text-mist">
+            Questions or requests regarding this policy or your personal information can be
+            directed to:
+          </p>
+          <div class="mt-4 flex flex-col gap-2">
+            <p class="font-mono text-sm text-paper">Continuum Dataguard Technologies</p>
+            <p class="font-mono text-sm text-mist">Durban, KwaZulu-Natal, South Africa</p>
+            <a href="mailto:admin@continuumdataguardtech.co.za" class="font-mono text-sm text-paper hover:text-signal">
+              admin@continuumdataguardtech.co.za
+            </a>
+          </div>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <Footer slot="footer" />
+</Layout>
