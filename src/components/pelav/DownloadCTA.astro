@@ -10,7 +10,7 @@ const { class: className } = Astro.props;
 ---
 
 {playStoreUrl ? (
-  <Button href={playStoreUrl} class={className}>
+  <Button href={playStoreUrl} target="_blank" rel="noopener noreferrer" class={className}>
     Get PELAV™ on Google Play
   </Button>
 ) : (

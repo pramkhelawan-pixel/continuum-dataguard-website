@@ -42,9 +42,8 @@ export const features: PelavFeature[] = [
   },
 ];
 
-// Real Google Play listing URL not yet available — keep null so DownloadCTA
-// renders a disabled "Coming Soon" state instead of a fake link.
-export const playStoreUrl: string | null = null;
+export const playStoreUrl: string | null =
+  'https://play.google.com/store/apps/details?id=com.continuumdataguard.pelav&hl=en';
 
 export interface PelavPricingTier {
   name: string;

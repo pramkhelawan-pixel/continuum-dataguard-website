@@ -4,9 +4,18 @@ interface Props {
   variant?: 'primary' | 'secondary';
   type?: 'button' | 'submit';
   class?: string;
+  target?: string;
+  rel?: string;
 }
 
-const { href, variant = 'primary', type = 'button', class: className } = Astro.props;
+const {
+  href,
+  variant = 'primary',
+  type = 'button',
+  class: className,
+  target,
+  rel,
+} = Astro.props;
 const Tag = href ? 'a' : 'button';
 
 const base =
@@ -21,6 +30,8 @@ const variants = {
 <Tag
   href={href}
   type={href ? undefined : type}
+  target={href ? target : undefined}
+  rel={href ? rel : undefined}
   class:list={[base, variants[variant], className]}
 >
   <slot />
