@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="pelav-legal-source-sha256" content="202687daaefda1b703546c3d64cbedde4b87355676ec529cf9811adae0dfdf57">
+<meta name="pelav-legal-source-sha256" content="7556bcfcf618622dbb9bf8b0a3e1bd488ed8817d6584972e9e72ccc24cd0ef52">
 <link rel="canonical" href="https://continuumdataguardtech.co.za/pelav/legal/privacy-policy.html">
 <!-- GENERATED from assets/legal/ by tool/legal/build_legal_site.mjs. Do not edit by hand. -->
 <title>Privacy Policy — PELAV</title>
@@ -31,7 +31,7 @@
   <header>
     <p class="eyebrow">PELAV</p>
     <h1>Privacy Policy</h1>
-    <p class="updated"><strong>Version 2.0 · Last updated 14 October 2026</strong></p>
+    <p class="updated"><strong>Version 2.1 · Last updated 14 October 2026</strong></p>
   </header>
   <p>PELAV (&quot;the App&quot;) is provided by Continuum Dataguard Technologies (&quot;we&quot;, &quot;us&quot;, &quot;our&quot;). This Privacy Policy explains what personal information PELAV processes, why, who else receives it, how long it is kept, and the choices and rights you have.</p>
   <h2>1. Who is responsible</h2>
@@ -43,18 +43,18 @@
   <h2>3. Information we collect and why</h2>
   <h3>3.1 Account information</h3>
   <p>When you create an account we collect your email address and a password. The password is handled by our authentication provider (Supabase Auth) and stored only in hashed form; we never see it in plain text. We use your email address to run your account, to send account emails (confirming your email address and resetting your password), and to contact you about your account where necessary. You need an email address and a password to create an account; without them you cannot use the App.</p>
-  <p>Our authentication service also keeps an audit log of account events (for example sign-up, sign-in, sign-out, session refresh and account deletion). Each entry records the event, its time, your account identifier and your email address, and can record an IP address.</p>
+  <p>Our authentication service, Supabase Auth, also records account events (for example sign-up, sign-in, sign-out, session refresh and account deletion) in Supabase's service logs. Each entry records the event, its time, your account identifier and your email address, and can record an IP address. PELAV does not keep its own copy of these records in its database. How long Supabase keeps them is set out in section 7.</p>
   <h3>3.2 Legal acceptance records</h3>
   <p>When you accept the Terms and Conditions and this Privacy Policy, our server records the versions you accepted, the date and time, your confirmation that you are 18 or older, and whether you accepted at sign-up or later in the App. We keep these records to show what you agreed to. Records from before version 2.0 that were filled in automatically by an earlier version of our system are labelled as such and are not treated as your acceptance of version 2.0.</p>
   <h3>3.3 Location</h3>
   <p>With your permission, PELAV uses your device's precise location while you are using the App. PELAV does not track your location in the background. You can refuse or withdraw location permission in your device settings; Home and Marine still work with reduced features.</p>
   <p>Your location is used as follows:</p>
   <ul>
-    <li><strong>Current conditions (Home and Marine screens).</strong> Your device first converts its position into a grid area of about 5 km (0.05 degrees) and sends only the centre of that grid area, not your exact position, to PELAV's backend. The backend requests current weather and sea conditions for that grid area from Open-Meteo under PELAV's paid Open-Meteo subscription. Open-Meteo receives the grid-area centre from our backend, not your exact position and not your account details. The results are cached on our backend against the grid area, not against you or your account. Because the conditions are for the grid area, they can differ from conditions at your exact spot.</li>
-    <li><strong>Tides.</strong> Your device sends its coordinates to PELAV's backend, which rounds them to about 1.1 km (two decimal places) before requesting tide predictions from WorldTides. WorldTides never receives your exact location or your account details. Our backend does not store your exact coordinates; the tide cache holds only the rounded coordinates (section 7).</li>
+    <li><strong>Current conditions (Home and Marine screens).</strong> Your device first converts its position into a grid area of about 5 km (0.05 degrees) and sends only the centre of that grid area, not your exact position, to PELAV's backend. The backend requests current weather and sea conditions, and the daily weather forecast (from which the Marine screen shows today's forecast high and low air temperature), for that grid area from Open-Meteo under PELAV's paid Open-Meteo subscription. Open-Meteo receives the grid-area centre from our backend, not your exact position and not your account details. The results are cached on our backend against the grid area, not against you or your account. Because the conditions are for the grid area, they can differ from conditions at your exact spot.</li>
+    <li><strong>Tides.</strong> Your device rounds its coordinates to about 1.1 km (two decimal places) before sending them to PELAV's backend, which requests tide predictions from WorldTides for that rounded point. Neither our backend nor WorldTides receives your exact location for tides, and WorldTides does not receive your account details. The tide cache holds only the rounded coordinates (section 7).</li>
     <li><strong>Maps.</strong> Map images come from OpenStreetMap. Your device requests map tiles directly from OpenStreetMap's servers for the area on screen. When the map is centred on you, this reveals your approximate location (depending on zoom) and your IP address to OpenStreetMap, as with any web request. OpenStreetMap does not receive your PELAV account details.</li>
   </ul>
-  <p>Your device's coordinates are not stored in your account, your catch history or your fishing sessions. When you are signed in, our backend knows which account asks for conditions at the time of the request (to apply the refresh limits in 3.6), but it does not record the location or grid area against your account.</p>
+  <p>Your device's coordinates are not stored in your account, your catch history or your fishing sessions. When you are signed in, our backend knows which account asks for conditions at the time of the request (to apply the refresh limits in 3.6), but our database does not record the location or grid area against your account. Our hosting provider's service logs are described in section 7.</p>
   <h3>3.4 Catches and fishing sessions</h3>
   <p>When you log a catch, we store what you enter: species, location, weight, length, bait, hook, trace, notes, and date and time. The location of a catch is a place name you choose from PELAV's fishing-spot directory or type yourself, not GPS coordinates. Your catch record has a photo field, but this version of the App does not let you attach photos.</p>
   <p>When you start a fishing session we store a session identifier, start time, location label (a place name, or the words &quot;Current Location&quot;), target species, and, where available, a snapshot of weather, sea and tide conditions taken at the start of the session. When the session ends we store the end time and status (active, ended or abandoned). A session does not track your location while it is open. If about 12 hours pass we may ask whether you are still fishing; if about 72 hours pass without you returning, the session is marked abandoned. An abandoned session is not presented as a no-catch result.</p>
@@ -64,7 +64,7 @@
   <h3>3.6 Refresh limits</h3>
   <p>To keep the service available for everyone, our server counts how often your account asks for fresh conditions within a short time window. Each count covers one hour. How long counts are kept is set out in section 7.</p>
   <h3>3.7 Crash reports</h3>
-  <p>PELAV uses Firebase Crashlytics (Google) to find and fix crashes. When the App crashes, Crashlytics receives a crash report containing technical information such as the stack trace, device model, operating-system version and app version, together with Crashlytics and Firebase installation identifiers. PELAV does not attach your email address or account identifier to crash reports. How long Google keeps crash reports is set out in section 7.</p>
+  <p>PELAV uses Firebase Crashlytics (Google) to find and fix crashes. When the App crashes, Crashlytics receives a crash report containing technical information such as the stack trace, device model, operating-system version and app version, together with Crashlytics and Firebase installation identifiers. So that Google can tell how many users and sessions are free of crashes, Crashlytics also receives a record of each App session, with the same installation identifiers, even when nothing crashes. PELAV does not attach your email address or account identifier to crash reports or session records. How long Google keeps crash reports is set out in section 7.</p>
   <h3>3.8 Information kept only on your device</h3>
   <p>Some information never leaves your device:</p>
   <ul>
@@ -76,7 +76,7 @@
   <h3>3.9 Recommending PELAV</h3>
   <p>If you use Recommend a Friend, your device's own share sheet sends a short text that you choose where to send. PELAV does not see who you share it with.</p>
   <h3>3.10 Older versions of the App</h3>
-  <p>Section 3.3 describes the current version of the App. Versions 1.3.0 and older work differently for current conditions on the Home and Marine screens: if you still use one of those versions, your device sends its coordinates directly to Open-Meteo's free service, without passing through PELAV's backend. Open-Meteo does not receive your PELAV account details. Updating to the current version ends this. Tides and maps work as described in 3.3 in those versions too.</p>
+  <p>Section 3.3 describes the current version of the App. Versions 1.3.0 and older work differently for current conditions on the Home and Marine screens: if you still use one of those versions, your device sends its coordinates directly to Open-Meteo's free service, without passing through PELAV's backend. Open-Meteo does not receive your PELAV account details. Updating to the current version ends this. For tides, those versions send your device's coordinates to PELAV's backend, which rounds them to about 1.1 km before contacting WorldTides and does not store the exact coordinates. Maps work as described in 3.3.</p>
   <h2>4. Lawful basis for processing</h2>
   <p>We process personal information only where section 11(1) of the Protection of Personal Information Act 4 of 2013 (POPIA) allows it, and only as much as each purpose needs:</p>
   <p><strong>To provide the App you signed up for</strong> (section 11(1)(b), performance of our agreement with you, which is our Terms and Conditions):</p>
@@ -91,7 +91,7 @@
   <p><strong>Our legitimate interests</strong> (section 11(1)(f)):</p>
   <ul>
     <li>keeping a record of the legal documents you accepted, so that we can show what you agreed to (3.2);</li>
-    <li>protecting accounts and the service against misuse, through the authentication audit log (3.1) and refresh limits (3.6);</li>
+    <li>protecting accounts and the service against misuse, through refresh limits (3.6) and our hosting provider's service logs, including its records of account events (3.1 and section 7);</li>
     <li>finding and fixing crashes, through crash reports that carry no email address or account identifier (3.7).</li>
   </ul>
   <p>Each record is limited to what that purpose needs and is kept only for the period in section 7. You can object to this processing on reasonable grounds relating to your particular situation (section 9).</p>
@@ -102,42 +102,52 @@
     <li>responding to the Information Regulator or to other lawful requests.</li>
   </ul>
   <p>We do not rely on your consent for any of this processing, and we do not use your personal information for direct marketing.</p>
+  <p>No law requires you to give us your personal information, and no particular law, other than POPIA itself, authorises or requires us to collect it. POPIA allows the processing described in this section. Section 23 of POPIA gives you the right of access to your information once you have provided adequate proof of identity, which is why we may ask you to confirm your identity before we answer an access request (section 9).</p>
   <h2>5. Who receives your information</h2>
   <p>We use these service providers. Each processes information only as needed to provide its service to PELAV, under its own terms and privacy practices.</p>
   <ul>
-    <li><strong>Supabase</strong> (authentication, database, backend functions): account, legal-acceptance, catch, session, access and refresh-limit records. Our Supabase project is hosted in the European Union (Ireland).</li>
+    <li><strong>Supabase</strong> (authentication, database, backend functions): account, legal-acceptance, catch, session, access and refresh-limit records, and the service logs described in section 7. Where Supabase processes it is set out in section 6.</li>
     <li><strong>Resend</strong> (sending account emails on behalf of our authentication service): your email address and the content of account emails.</li>
     <li><strong>Google Firebase Crashlytics</strong>: crash reports as described in 3.7.</li>
-    <li><strong>Open-Meteo</strong>: the centre of a grid area of about 5 km, sent by our backend, for current conditions (3.3). For older App versions, see 3.10. Open-Meteo states that it keeps web-server logs containing IP addresses and coordinates for 90 days.</li>
+    <li><strong>Open-Meteo</strong>: the centre of a grid area of about 5 km, sent by our backend, for current conditions and the daily weather forecast (3.3). For older App versions, see 3.10. Open-Meteo states that it keeps web-server logs containing IP addresses and coordinates for 90 days.</li>
     <li><strong>WorldTides</strong> (Brainware LLC): rounded coordinates (about 1.1 km), sent by our backend.</li>
     <li><strong>OpenStreetMap</strong>: map-tile requests from your device, as described in 3.3.</li>
+    <li><strong>GitHub</strong> (hosting our website, including the pages that account emails link to): your IP address when you open those pages, which GitHub states it logs for security purposes.</li>
   </ul>
   <p>We do not sell your personal information, and we do not share it for advertising.</p>
   <h2>6. Information processed outside South Africa</h2>
   <p>All of these providers are outside South Africa:</p>
   <ul>
-    <li><strong>Supabase:</strong> our project is hosted in Ireland (European Union). Supabase's data processing addendum forms part of its terms of service.</li>
-    <li><strong>Resend:</strong> processes mainly in the United States. Resend's data processing addendum forms part of its terms of service.</li>
+    <li><strong>Supabase:</strong> the service is provided by Supabase Pte. Ltd. (Singapore). Our project's database is hosted in Ireland (European Union). Our backend functions run in the Supabase region closest to you, which for users in South Africa is currently in the European Union, and Supabase and its sub-processors, including companies in the United States, may also process information elsewhere, for example to deliver network traffic, run the service and provide support.</li>
+    <li><strong>Resend:</strong> processes mainly in the United States.</li>
     <li><strong>Google Firebase Crashlytics:</strong> Google may process crash reports in any country where it or its agents have facilities.</li>
-    <li><strong>Open-Meteo:</strong> operated from Switzerland.</li>
+    <li><strong>Open-Meteo:</strong> operated by OpenMeteo GmbH from Switzerland.</li>
     <li><strong>WorldTides:</strong> operated by Brainware LLC in California, United States.</li>
-    <li><strong>OpenStreetMap:</strong> the OpenStreetMap Foundation stores tile-request data in the United Kingdom and the Netherlands, and map tiles are delivered through a content delivery network.</li>
+    <li><strong>OpenStreetMap:</strong> the OpenStreetMap Foundation is registered in England and Wales (United Kingdom). Map tiles are served by a global network of cache servers, so a tile request may be received in any country.</li>
+    <li><strong>GitHub:</strong> our website is hosted by GitHub, Inc. (United States).</li>
   </ul>
   <p>The level of protection differs by country:</p>
   <ul>
     <li>the European Union applies the General Data Protection Regulation;</li>
     <li>the United Kingdom applies the UK GDPR;</li>
     <li>Switzerland applies its Federal Act on Data Protection;</li>
+    <li>Singapore applies its Personal Data Protection Act 2012;</li>
     <li>the United States has no general federal data-protection law comparable to POPIA.</li>
   </ul>
-  <p>We transfer personal information to these providers because the transfer is necessary to perform our agreement with you, that is to provide, maintain and fix the App you use (section 72(1)(c) of POPIA). Each provider receives only the information listed in section 5.</p>
+  <p>How your information is protected when it leaves South Africa:</p>
+  <ul>
+    <li>Supabase, Resend and Google (for crash reports) publish data processing terms as part of their terms of service. As published, these terms require the provider to process information only to provide its service to us, to keep it confidential and secure, to tell us about security incidents, to impose comparable obligations on its sub-processors, and to delete it after we stop using its service. Supabase's published terms also provide for the European Union's standard contractual clauses, adapted to the exporting country's law, where that law requires a transfer safeguard. We are verifying how these terms apply to our particular accounts, plans and services, including the session records described in 3.7.</li>
+    <li>In the current version of the App, Open-Meteo and WorldTides receive only an area-level location from our backend (about 5 km and about 1.1 km), without your account details and without your device's IP address. Older versions work differently (3.10).</li>
+    <li>Your device or browser contacts OpenStreetMap, GitHub and Google (crash reports and session records) directly, when you use the map, open our web pages or use the App (3.7).</li>
+  </ul>
+  <p>For transfers to Supabase, Resend and Google (crash reports), we rely on the terms described above as binding agreements (section 72(1)(a) of POPIA), as they apply to our accounts and services. Transfers to Supabase and Resend are also needed to provide your account, your records and your account emails (section 72(1)(c) of POPIA). Conditions, tides and maps for your area, and the web pages you open, are sent abroad because they are needed to provide those features to you (section 72(1)(c) of POPIA). Each provider receives only the information listed in section 5.</p>
   <h2>7. How long we keep information</h2>
   <ul>
     <li><strong>Account, catches, sessions, legal-acceptance records, access records:</strong> until you delete your account (section 8).</li>
     <li><strong>Refresh counters:</strong> no more than two days. Each counter covers one hour, and counters are deleted daily once their hour is over a day old, or with your account.</li>
-    <li><strong>Authentication audit log (3.1):</strong> entries are not removed when you delete your account. They are kept for up to 90 days.</li>
     <li><strong>Tide cache:</strong> used for up to about 12 hours (or until the next midnight, South African time), then deleted by a daily job 7 to 8 days after it expires. It holds rounded coordinates and tide data, not your account.</li>
-    <li><strong>Current-conditions cache and provider-call records:</strong> hold a grid area of about 5 km, the time and the provider's data, not your account. A cache entry is replaced each time its grid area is refreshed, and deleted no later than 30 days after its grid area was last refreshed. Provider-call records are kept for up to 90 days.</li>
+    <li><strong>Current-conditions and daily-forecast cache, and provider-call records:</strong> hold a grid area of about 5 km, the time and the provider's data, not your account. A cache entry is replaced each time its grid area is refreshed, and deleted no later than 30 days after its grid area was last refreshed. Provider-call records are kept for up to 90 days.</li>
+    <li><strong>Hosting-provider service logs:</strong> Supabase, which hosts our backend, keeps logs of requests to our backend and of account events such as sign-up, sign-in and account deletion (3.1). They can include your IP address, your account identifier and email address, and details of a request, such as the grid area of about 5 km for a conditions request or a coded form of the rounded tide location. These logs are not removed when you delete your account. Supabase keeps them for the period our Supabase plan sets (Supabase publishes periods of 1 to 90 days).</li>
     <li><strong>Crash reports:</strong> Google states that it keeps crash stack traces and their identifiers for 90 days before starting to remove them from its live and backup systems.</li>
     <li><strong>Disaster-recovery backups:</strong> we keep encrypted, offline backups of our database to recover from serious failures. Information in a backup may remain until that backup is replaced or destroyed. Each backup is kept for up to 90 days. Our database provider, Supabase, may also keep automatic backups of our database under its own terms, for the period its plan sets (Supabase publishes periods of up to 30 days).</li>
     <li><strong>On your device:</strong> until you delete it in the App where the App offers that, delete your account, clear the App's data in your device settings, or uninstall the App. A Licence Vault document stored with an earlier version of the App can only be removed in one of the last three ways.</li>
@@ -148,7 +158,7 @@
     <li>permanently deletes, on our servers, your account, profile, catches, fishing sessions, legal-acceptance records, refresh counters, and the access records described in 3.5 (any trial, subscription or complimentary-access records). Catches and sessions are deleted together in a single database transaction, so a failure never leaves only part of them deleted;</li>
     <li>then removes, on that device, the Licence Vault document stored for your account, and signs you out.</li>
   </ul>
-  <p>Information that deletion does not remove is listed in section 7: authentication audit-log entries, crash reports already sent, provider logs, and disaster-recovery backups until they are replaced.</p>
+  <p>Information that deletion does not remove is listed in section 7: hosting-provider service logs (including records of account events), crash reports already sent, provider logs, and disaster-recovery backups until they are replaced.</p>
   <p>The on-device cleanup happens after the server deletion succeeds and depends on the App being able to run it; if it does not complete, uninstalling the App removes it.</p>
   <p>If you cannot use the App, email <a href="mailto:admin@continuumdataguardtech.co.za">admin@continuumdataguardtech.co.za</a> from the email address of your PELAV account and ask us to delete it. We will verify the request and process it as soon as reasonably possible. Full details are on our account deletion page.</p>
   <h2>9. Your rights</h2>
