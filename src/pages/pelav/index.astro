@@ -9,7 +9,7 @@ import Button from '../../components/ui/Button.astro';
 import FeatureCard from '../../components/pelav/FeatureCard.astro';
 import DownloadCTA from '../../components/pelav/DownloadCTA.astro';
 import Disclaimer from '../../components/pelav/Disclaimer.astro';
-import { features, pricing, disclaimerRefs } from '../../data/pelav';
+import { features, disclaimerRefs, pelavLegal } from '../../data/pelav';
 
 const liveFeatures = features.filter((feature) => feature.status === 'live');
 const upcomingFeatures = features.filter((feature) => feature.status === 'coming-soon');
@@ -105,21 +105,20 @@ const structuredData = {
 
   <Section id="pricing" class="border-b border-border">
     <Container class="max-w-3xl">
-      <Badge>Free vs Premium</Badge>
+      <Badge>Free</Badge>
       <h2 class="mt-6 text-4xl text-paper">Getting started.</h2>
-      <div class="mt-12 grid gap-6 sm:grid-cols-2">
-        <div class="border border-border-strong p-6">
-          <p class="font-mono text-xs uppercase tracking-wider text-signal">{pricing.free.name}</p>
-          <p class="mt-3 text-sm text-fog">Available now.</p>
-        </div>
-        <div class="border border-border p-6 opacity-70">
-          <div class="flex items-center justify-between gap-4">
-            <p class="font-mono text-xs uppercase tracking-wider text-signal">{pricing.premium.name}</p>
-            <Badge>Coming Soon</Badge>
-          </div>
-          <p class="mt-3 text-sm text-fog">Pricing and features to be announced.</p>
-        </div>
+      <div class="mt-12 border border-border-strong p-6">
+        <p class="font-mono text-xs uppercase tracking-wider text-signal">Free</p>
+        <p class="mt-3 text-sm text-fog">
+          This version of PELAV™ is free. Every feature it offers, including Solunar Activity and
+          best-fishing-window suggestions, is available to every account. There is no Premium tier,
+          and PELAV™ does not currently sell subscriptions or offer free trials.
+        </p>
       </div>
+      <p class="mt-6 text-sm text-mist">
+        Full details are in section 10 of the
+        <a href={pelavLegal.terms} class="text-paper hover:text-signal">PELAV™ Terms and Conditions</a>.
+      </p>
     </Container>
   </Section>
 

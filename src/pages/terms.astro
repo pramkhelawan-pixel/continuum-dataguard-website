@@ -5,181 +5,141 @@ import Footer from '../components/layout/Footer.astro';
 import Container from '../components/ui/Container.astro';
 import Section from '../components/ui/Section.astro';
 import Badge from '../components/ui/Badge.astro';
+import { pelavLegal } from '../data/pelav';
+
+// Covers the website only; the PELAV™ app's own documents are linked, never
+// restated. The three disclaimer ids are kept for existing links to them.
+const pelavTerms = pelavLegal.terms;
+const pelavSafety = pelavLegal.safety;
 ---
 
-<Layout title="Terms of Use" description="Terms governing use of the Continuum Dataguard Technologies website and the PELAV™ app.">
+<Layout title="Terms of Use" description="Terms governing use of the Continuum Dataguard Technologies website, with links to the PELAV™ app's own Terms and Conditions.">
   <Header slot="header" />
 
   <Section>
     <Container class="max-w-3xl">
       <Badge>Terms of Use</Badge>
       <h1 class="mt-6 text-4xl text-paper">Terms of Use</h1>
+      <p class="mt-3 font-mono text-sm text-mist">Last updated 13 October 2026</p>
       <p class="mt-6 text-mist">
-        These Terms of Use govern your use of the Continuum Dataguard Technologies website and
-        the PELAV™ app. By using the website or the app, you agree to these terms.
+        These Terms of Use govern your use of the Continuum Dataguard Technologies website. By
+        using the website, you agree to these terms.
       </p>
 
       <div class="mt-12 flex flex-col gap-10">
         <div>
-          <h2 class="text-2xl text-paper">Website and app use — Both</h2>
+          <h2 class="text-2xl text-paper">The PELAV™ app has its own terms</h2>
           <p class="mt-3 text-mist">
-            This website is provided for general informational purposes about Continuum
-            Dataguard Technologies, its consulting practice and its PELAV™ app. PELAV™ is a
-            product of Continuum Dataguard Technologies, not a separate company. You may use the
-            website and the app for lawful purposes only.
+            These terms do not cover the PELAV™ app. Your use of PELAV™ is governed only by the
+            PELAV™ legal documents:
+          </p>
+          <ul class="mt-3 flex flex-col gap-2 text-mist">
+            <li><a href={pelavTerms} class="text-paper hover:text-signal">PELAV™ Terms and Conditions</a></li>
+            <li><a href={pelavLegal.privacy} class="text-paper hover:text-signal">PELAV™ Privacy Policy</a></li>
+            <li><a href={pelavSafety} class="text-paper hover:text-signal">PELAV™ Safety and Disclaimers</a></li>
+            <li><a href={pelavLegal.dataSources} class="text-paper hover:text-signal">PELAV™ Data Sources and Attribution</a></li>
+            <li><a href={pelavLegal.accountDeletion} class="text-paper hover:text-signal">Delete your PELAV™ account</a></li>
+          </ul>
+          <p class="mt-3 text-mist">
+            PELAV™ is a product of Continuum Dataguard Technologies, not a separate company.
           </p>
         </div>
 
         <div>
-          <h2 class="text-2xl text-paper">Intellectual property — Both</h2>
+          <h2 id="marine-fishing-disclaimer" class="text-2xl text-paper">PELAV™ marine and fishing information</h2>
           <p class="mt-3 text-mist">
-            Unless otherwise indicated, the content, design and branding of this website and the
-            PELAV™ app are the property of Continuum Dataguard Technologies. You may not
-            reproduce, distribute or otherwise use this content without prior permission.
+            The disclaimers for PELAV™'s weather, marine, tide, solunar, readiness,
+            recommendation and species information are in the
+            <a href={pelavSafety} class="text-paper hover:text-signal">PELAV™ Safety and Disclaimers</a>
+            notice and the <a href={pelavTerms} class="text-paper hover:text-signal">PELAV™ Terms and Conditions</a>.
           </p>
         </div>
 
         <div>
-          <h2 class="text-2xl text-paper">PELAV™ app licence — PELAV™ App</h2>
+          <h2 id="licence-vault-disclaimer" class="text-2xl text-paper">PELAV™ Digital Fishing Licence Vault</h2>
           <p class="mt-3 text-mist">
-            Subject to these Terms, Continuum grants you a limited, non-exclusive,
-            non-transferable licence to download and use the PELAV™ app on a device you own or
-            control, for your own personal, lawful use. This licence does not transfer any
-            ownership in the app, its content, or Continuum's underlying intellectual property
-            to you.
+            The terms for the Licence Vault are in the
+            <a href={pelavTerms} class="text-paper hover:text-signal">PELAV™ Terms and Conditions</a>
+            and the <a href={pelavSafety} class="text-paper hover:text-signal">PELAV™ Safety and Disclaimers</a> notice.
           </p>
         </div>
 
         <div>
-          <h2 class="text-2xl text-paper">Accounts — PELAV™ App</h2>
+          <h2 id="length-to-weight-disclaimer" class="text-2xl text-paper">PELAV™ Length-to-Weight Calculator</h2>
           <p class="mt-3 text-mist">
-            Using the PELAV™ app requires creating an account. You are responsible for the
-            accuracy of the information you provide, and for keeping your account credentials
-            secure. You may delete your account at any time from within the app; account
-            deletion is immediate once confirmed and cannot be undone. See our Privacy Policy
-            for more detail on what account deletion removes.
+            The Length-to-Weight Calculator is not available in this version of the app. The
+            disclaimer for the calculator's estimates in app versions 1.3.0 and older is in the
+            <a href={pelavSafety} class="text-paper hover:text-signal">PELAV™ Safety and Disclaimers</a> notice.
           </p>
         </div>
 
         <div>
-          <h2 class="text-2xl text-paper">Free and Premium access — PELAV™ App</h2>
+          <h2 class="text-2xl text-paper">Use of this website</h2>
           <p class="mt-3 text-mist">
-            PELAV™ currently offers Free access to its features. Premium access is planned but
-            is not yet available for purchase. Pricing, billing, subscription, cancellation and
-            refund terms for Premium access have not yet been finalised and are not currently in
-            effect. This section will be updated before Premium access becomes available for
-            purchase.
+            This website provides general information about Continuum Dataguard Technologies, its
+            consulting practice and its products. You may use it for lawful purposes only.
           </p>
         </div>
 
         <div>
-          <h2 class="text-2xl text-paper">Website and app information — Both</h2>
+          <h2 class="text-2xl text-paper">Intellectual property</h2>
           <p class="mt-3 text-mist">
-            Content on this website and information provided through the PELAV™ app is
-            provided for general information purposes and does not constitute professional,
-            legal or financial advice. While we take reasonable care to keep information
-            accurate and up to date, we do not guarantee its completeness or accuracy.
+            Unless otherwise indicated, the content, design and branding of this website are the
+            property of Continuum Dataguard Technologies. You may not reproduce, distribute or
+            otherwise use this content without prior permission.
           </p>
         </div>
 
         <div>
-          <h2 id="marine-fishing-disclaimer" class="text-2xl text-paper">Marine and fishing intelligence — PELAV™ App</h2>
+          <h2 class="text-2xl text-paper">Website information</h2>
           <p class="mt-3 text-mist">
-            PELAV™ provides marine, weather, tide, solunar and species-related information —
-            drawing in part on third-party data sources such as Open-Meteo, WorldTides and
-            OpenStreetMap — to support your own fishing and marine decisions. This information is
-            provided for general planning purposes only. PELAV™ is not a government body,
-            fishing-licensing authority, marine authority, or official weather service, and does
-            not replace any official licence, regulation, safety notice, or authoritative source.
-            PELAV™ does not guarantee the accuracy, completeness, or availability of this
-            information, and does not guarantee fishing success, catches, or any particular
-            outcome. You remain responsible for your own safety and decisions on the water, and
-            for complying with all applicable laws, regulations and licensing requirements.
+            Content on this website is general information and does not constitute professional,
+            legal or financial advice. While we take reasonable care to keep it accurate and up
+            to date, we do not guarantee its completeness or accuracy.
           </p>
         </div>
 
         <div>
-          <h2 id="licence-vault-disclaimer" class="text-2xl text-paper">Digital Fishing Licence Vault — PELAV™ App</h2>
+          <h2 class="text-2xl text-paper">External links</h2>
           <p class="mt-3 text-mist">
-            The Digital Fishing Licence Vault lets you store a copy of your own fishing licence
-            document on your device for your convenience. This feature stores the document
-            locally on your device; PELAV™ does not issue, verify, renew, or replace your
-            official fishing licence. The original licence and any requirements of the relevant
-            issuing authority remain fully applicable, and you remain responsible for holding a
-            valid licence as required by law.
+            Links to third-party websites are provided for convenience only. Continuum Dataguard
+            Technologies does not control and is not responsible for the content or practices of
+            any third-party website.
           </p>
         </div>
 
         <div>
-          <h2 id="length-to-weight-disclaimer" class="text-2xl text-paper">Length-to-Weight Calculator — PELAV™ App</h2>
+          <h2 class="text-2xl text-paper">Limitation of liability</h2>
           <p class="mt-3 text-mist">
-            The Length-to-Weight Calculator provides a statistical estimate of a fish's weight,
-            calculated from a length you enter using published species-specific reference data.
-            This is an estimate only — not a measured, verified, or guaranteed weight — and
-            should not be relied on for regulatory, competition, or compliance purposes.
+            To the maximum extent permitted by law, Continuum Dataguard Technologies shall not be
+            liable for any loss or damage arising from your use of, or inability to use, this
+            website.
           </p>
         </div>
 
         <div>
-          <h2 class="text-2xl text-paper">External links — Website</h2>
+          <h2 class="text-2xl text-paper">Availability and changes</h2>
           <p class="mt-3 text-mist">
-            If this website contains links to third-party websites, those links are provided for
-            convenience only. Continuum Dataguard Technologies does not control and is not
-            responsible for the content or practices of any third-party website.
+            We do not guarantee that this website will be available at all times or free from
+            interruption. We may change its content, or these Terms of Use, at any time; the date
+            at the top of this page shows when they last changed.
           </p>
         </div>
 
         <div>
-          <h2 class="text-2xl text-paper">Limitation of liability — Both</h2>
-          <p class="mt-3 text-mist">
-            To the maximum extent permitted by law, Continuum Dataguard Technologies shall not
-            be liable for any loss or damage arising from your use of, or inability to use, this
-            website or the PELAV™ app.
-          </p>
-        </div>
-
-        <div>
-          <h2 class="text-2xl text-paper">Availability — Both</h2>
-          <p class="mt-3 text-mist">
-            We do not guarantee that this website or the PELAV™ app will be available at all
-            times or free from interruption. Either may be modified, suspended or discontinued,
-            in whole or in part, at any time.
-          </p>
-        </div>
-
-        <div>
-          <h2 class="text-2xl text-paper">Account termination — PELAV™ App</h2>
-          <p class="mt-3 text-mist">
-            You may stop using the PELAV™ app and delete your account at any time, as described
-            above. We may suspend or terminate your access to the app if we reasonably believe
-            you have breached these Terms or used the app unlawfully.
-          </p>
-        </div>
-
-        <div>
-          <h2 class="text-2xl text-paper">Changes to content and these terms — Both</h2>
-          <p class="mt-3 text-mist">
-            We may update or change the content of this website, the PELAV™ app, or these Terms
-            of Use, at any time without prior notice.
-          </p>
-        </div>
-
-        <div>
-          <h2 class="text-2xl text-paper">Governing law — Both</h2>
+          <h2 class="text-2xl text-paper">Governing law</h2>
           <p class="mt-3 text-mist">
             These Terms of Use are governed by the laws of the Republic of South Africa. Any
-            disputes arising from your use of the website or the PELAV™ app will be subject to
-            the jurisdiction of the South African courts.
+            disputes arising from your use of the website will be subject to the jurisdiction of
+            the South African courts.
           </p>
         </div>
 
         <div>
-          <h2 class="text-2xl text-paper">Contact — Both</h2>
-          <p class="mt-3 text-mist">
-            Questions regarding these Terms of Use can be directed to:
-          </p>
+          <h2 class="text-2xl text-paper">Contact</h2>
           <div class="mt-4 flex flex-col gap-2">
             <p class="font-mono text-sm text-paper">Continuum Dataguard Technologies</p>
+            <p class="font-mono text-sm text-mist">Registration number 2026/247252/07</p>
             <p class="font-mono text-sm text-mist">Durban, KwaZulu-Natal, South Africa</p>
             <a href="mailto:admin@continuumdataguardtech.co.za" class="font-mono text-sm text-paper hover:text-signal">
               admin@continuumdataguardtech.co.za
