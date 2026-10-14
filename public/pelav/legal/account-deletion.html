@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="pelav-legal-source-sha256" content="c24a57d5024e100ef8c0d26fc6822e5cc2bcbd9bad3d60edf376311cddbc75e1">
+<meta name="pelav-legal-source-sha256" content="6b7d1b64a389aacc30e32a93d091d5f724f59cb8016bfc8886f6deae48f15988">
 <link rel="canonical" href="https://continuumdataguardtech.co.za/pelav/legal/account-deletion.html">
 <!-- GENERATED from assets/legal/ by tool/legal/build_legal_site.mjs. Do not edit by hand. -->
 <title>Delete Your PELAV Account — PELAV</title>
@@ -52,9 +52,9 @@
   <p>On the device you delete from, after the server deletion succeeds: the Licence Vault document and details stored for your account. If this does not complete, uninstalling the app removes them.</p>
   <h2>What is kept</h2>
   <ul>
-    <li><strong>Authentication audit-log entries</strong> about account events (which include your email address): kept for up to 90 days.</li>
     <li><strong>Disaster-recovery backups</strong>: encrypted, offline backups made before your deletion can still contain your data until they are replaced or destroyed. Each backup is kept for up to 90 days. Automatic backups kept by our database provider, Supabase, can also contain your data for the period its plan sets (Supabase publishes periods of up to 30 days).</li>
     <li><strong>Crash reports</strong> already sent to Firebase Crashlytics, which do not contain your email address or account identifier, are kept by Google, which states that it keeps them for 90 days before starting to remove them.</li>
+    <li><strong>Hosting-provider service logs</strong>: logs of requests to our backend and of account events (such as sign-in and the deletion itself), kept by Supabase, which hosts our backend. PELAV does not keep its own copy of the account-event records. They can include your IP address, account identifier and email address, and are kept for the period our Supabase plan sets (Supabase publishes periods of 1 to 90 days).</li>
     <li><strong>Provider logs</strong>: Open-Meteo states that its web-server logs are kept for 90 days.</li>
   </ul>
   <footer>
